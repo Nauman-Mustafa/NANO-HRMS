@@ -816,7 +816,7 @@ console.log(this.selectedPostTitle)
 .jobs-text{
 
     color: #343434;
-font-family: Poppins;
+font-family: Poppins    ;
 font-size: 16px;
 font-style: normal;
 font-weight: 600;

@@ -19,6 +19,8 @@ Route::get('fetch_jobs/{id}', 'App\Http\Controllers\Recruitement\RecruitementCon
 Route::post('update_job', 'App\Http\Controllers\Recruitement\RecruitementController@update_job');
 Route::get('ind_job_detail2/{id}', 'App\Http\Controllers\Recruitement\RecruitementController@ind_job_detail');  //Individule job
 Route::get('/jobscount', 'App\Http\Controllers\Recruitement\RecruitementController@jobs_count');
+Route::get('/Activejobscount', 'App\Http\Controllers\Recruitement\RecruitementController@Activejobs_count');
+
 Route::get('/search-jobs/{postTitle}', 'App\Http\Controllers\Recruitement\RecruitementController@searchJobsByTitle');
 
 // candidate

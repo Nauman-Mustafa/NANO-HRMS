@@ -621,7 +621,69 @@ class RecruitementController extends Controller
 
         return request()->json(200, $counts);
     }
+    public function Activejobs_count(){
+        $company_id = Session::get('company_id');
+    
+        // Get job titles and related information
+        $jobs = DB::connection('sqlsrv2')
+            ->table('Post_Job')
+            ->select('JobID', 'PostTitle')
+            ->where('CompanyID', '=', $company_id)
+            ->get();
+    // dd($jobs);
+        $jobCounts = [];
+    
+        foreach ($jobs as $job) {
+            $jobID = $job->JobID;
+    
+            // Count total applicants for each job
+            $candidateIDs = DB::connection('sqlsrv2')
+            ->table('Candidate_Detail')
+            ->where('CompanyID', '=', $company_id)
+            ->where('JobID', '=', $jobID)
+            ->pluck('CandID')
+            ->toArray();
 
+        // Count total applicants for each job
+        $totalApplicants = count($candidateIDs);
+    
+        // $ongoingInterviews = DB::connection('sqlsrv2')
+        // ->table('interview_detail')
+        // ->where('CompanyID', '=', $company_id)
+        // ->whereIn('CandID', $candidateIDs)
+        // ->where('hire_sts', '!=', '1')
+        // ->where(function ($query) {
+        //     $query->where('firstInterviewstatus', '=', 'Scheduled')
+        //         ->orWhere('secondInterviewstatus', '=', 'Scheduled')
+        //         ->orWhere('finalInterviewstatus', '=', 'Scheduled');
+        // })
+        // ->count();
+        $totalInterviews = DB::connection('sqlsrv2')
+        ->table('interview_detail')
+        ->where('CompanyID', '=', $company_id)
+        ->whereIn('CandID', $candidateIDs)
+      
+        ->count();
+
+    // Count persons hired for each job
+    $personsHired = DB::connection('sqlsrv2')
+        ->table('interview_detail')
+        ->where('CompanyID', '=', $company_id)
+        ->whereIn('CandID', $candidateIDs)
+        ->where('hire_sts', '=', '1')
+        ->count();
+
+    // Store counts in an associative array with the job title as the key
+    $jobCounts[$job->PostTitle] = [
+        'total_applicants' => $totalApplicants,
+        'ongoing_interviews' => $totalInterviews,
+        'persons_hired' => $personsHired,
+    ];
+        }
+    
+        return response()->json($jobCounts, 200);
+    }
+    
     //Count relevent job candidates
     public function rel_cand_count(){
         $company_id= Session::get('company_id');
