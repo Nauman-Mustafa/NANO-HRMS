@@ -683,7 +683,34 @@ class RecruitementController extends Controller
     
         return response()->json($jobCounts, 200);
     }
-    
+    public function hiring_graphdata()
+{
+    $result = DB::connection('sqlsrv2')
+        ->table('candidate_detail')
+        ->join('interview_detail', 'candidate_detail.CandID', '=', 'interview_detail.CandID')
+        ->select(
+            DB::raw('COUNT(candidate_detail.CandID) AS total_candidates'),
+            DB::raw('SUM(CASE WHEN interview_detail.hire_sts = 1 THEN 1 ELSE 0 END) AS hired_candidates')
+        )
+        ->first();
+    return $result;
+}
+public function weekly_hiring(){
+    $weeklyHiringData = DB::connection('sqlsrv2')
+        ->table('Post_Job as p')
+        ->join('Candidate_Detail as c', 'p.JobID', '=', 'c.JobID')
+        ->leftJoin('interview_detail as i', 'c.CandID', '=', 'i.CandID')
+        ->select(
+            DB::raw('DATEPART(WEEK, c.CreatedOn) AS week_number'),
+            DB::raw('COUNT(c.CandID) AS total_candidates'),
+            DB::raw('SUM(CASE WHEN i.hire_sts = 1 THEN 1 ELSE 0 END) AS hired_candidates')
+        )
+        ->whereMonth('c.CreatedOn', '=', now()->month) // Filter for the current month
+        ->groupBy(DB::raw('DATEPART(WEEK, c.CreatedOn)'))
+        ->orderBy('week_number')
+        ->get();
+    return $weeklyHiringData;
+}
     //Count relevent job candidates
     public function rel_cand_count(){
         $company_id= Session::get('company_id');

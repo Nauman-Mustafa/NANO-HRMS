@@ -22,6 +22,13 @@ Route::get('/jobscount', 'App\Http\Controllers\Recruitement\RecruitementControll
 Route::get('/Activejobscount', 'App\Http\Controllers\Recruitement\RecruitementController@Activejobs_count');
 
 Route::get('/search-jobs/{postTitle}', 'App\Http\Controllers\Recruitement\RecruitementController@searchJobsByTitle');
+Route::get('/hiringgraphdata', 'App\Http\Controllers\Recruitement\RecruitementController@hiring_graphdata');
+Route::get('/weeklygraphdata', 'App\Http\Controllers\Recruitement\RecruitementController@weekly_hiring');
+
+
+
+
+
 
 // candidate
 Route::post('candidate','App\Http\Controllers\Recruitement\RecruitementController@add_candidate')->middleware('permission:Add new Candidates');

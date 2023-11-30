@@ -133,12 +133,100 @@
                             </div>
                         </div>
                     </div>
-                  
+                    <div class="row my-5">
+                        <div class="bar-charts card  ">
+                            <div class="card-header" >
+                                    <h4 class=" activePost-text">Last 5 Months Hiring </h4>
+                                </div>
+            
+                            <apexchart width="800" height="320" type="bar" :options="chartOptionsbar" :series="chartSeriesbar"></apexchart>
+                        
+                   
+                           
+                       
+                        </div>
+
+                        <div class="donut-charts card">
+                            <!-- <apexchart width="500" type="bar" :options="chartOptionsbar" :series="chartSeriesbar"></apexchart> -->
+
+                            <apexchart class="my-4" width="400" height="480" type="donut" :options="chartOptionsdonut" :series="chartSeriesdonut"></apexchart>
+                     
+                    <div class=" d-flex my-4 ">
+                        <div class="d-flex mx-2">
+                            <div class="greenboxes mx-2">   </div>
+                            <div>
+                                <h4 class="cardstext">Total Candidate </h4>
+                                <h4 class="cardstext mx-5">{{ chartSeriesdonut[1] }}</h4>
+
+                            </div>
+                        </div>
+                       
+                      <div class="d-flex">
+                        <div class="blueboxes mx-2">   </div>
+                        <div>
+                            <h4 class="cardstext">Hired Candidate</h4>
+
+                                <h4 class="cardstext mx-5">{{ chartSeriesdonut[0] }}</h4>
+
+                            </div>
+                      </div>
+                    </div>
+                           
+                       
+                        </div>
+                    </div>
+
 
 <div class="row">
+    <div class="col-md-4">
+    <div class=" card-hires-source">
+                                <div class="card-header" >
+                                    <h4 class=" activePost-text">Hires by source</h4>
+                                </div>
+                                <div class="card-body mx-3 py-2">
+                                <div class="py-2 d-flex justify-content-between ">
+<div class="source-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+  <path d="M36 31C36 33.762 33.762 36 31 36H5C2.239 36 0 33.762 0 31V5C0 2.238 2.239 0 5 0H31C33.762 0 36 2.238 36 5V31Z" fill="#0288D1"/>
+  <path d="M6 13H11V30H6V13ZM8.485 11H8.457C6.965 11 6 9.888 6 8.499C6 7.08 6.995 6 8.514 6C10.035 6 10.972 7.08 11 8.499C11 9.887 10.035 11 8.485 11ZM30 30H25V20.901C25 18.703 23.775 17.203 21.808 17.203C20.307 17.203 19.495 18.215 19.101 19.193C18.957 19.543 19 20.511 19 21V30H14V13H19V15.616C19.721 14.5 20.85 13 23.738 13C27.316 13 29.999 15.25 29.999 20.274L30 30Z" fill="white"/>
+</svg>
+</div>
+<div class="source-text mx-3">
+    <h4 class=" activePost-text">Linked In</h4>
+
+</div>
+ 
+
+                                </div>
+                                <div class="  d-flex justify-content-between ">
+<div class="source-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+  <path d="M20.8125 2.25C12.0938 2.25 6.75 12.6562 6.75 18C6.75 18 10.4062 4.5 21.375 4.5C25.4531 4.5 28.125 6.75 28.125 6.75C28.125 6.75 27 2.25 20.8125 2.25ZM19.6875 7.875C18.6432 7.875 17.6417 8.28984 16.9033 9.02827C16.1648 9.76669 15.75 10.7682 15.75 11.8125C15.75 12.8568 16.1648 13.8583 16.9033 14.5967C17.6417 15.3352 18.6432 15.75 19.6875 15.75C20.7318 15.75 21.7333 15.3352 22.4717 14.5967C23.2102 13.8583 23.625 12.8568 23.625 11.8125C23.625 10.7682 23.2102 9.76669 22.4717 9.02827C21.7333 8.28984 20.7318 7.875 19.6875 7.875ZM22.5 18C22.5 18 21.375 19.125 16.875 19.125V30.9375C16.875 32.4911 18.1339 33.75 19.6875 33.75C21.2411 33.75 22.5 32.4911 22.5 30.9375V18Z" fill="black"/>
+</svg>
+</div>
+<div class="source-text mx-3">
+    <h4 class=" activePost-text">Indeed</h4>
+
+</div>
+
+                                </div>
+                                <div class="  d-flex justify-content-between ">
+<div class="source-logo">
+  
+</div>
+<div class="source-text mx-3">
+    <h4 class=" activePost-text">Others</h4>
+
+</div>
+
+                                </div>
+                                </div>
+                            </div>
+</div>
+   
     <div class="col-md-8 ">
                             <div class="activePost-card card">
-                                <div class="card-body"  style=" overflow-y: auto; max-height: 300px;">
+                                <div class="card-body"  style=" overflow-y: auto; ">
     <h4 class="activePost-text my-2">Active Posts</h4>
 
     <div  class=" my-4 mx-2 d-flex justify-content-between" v-for="(jobData,jobTitle) in Activejobcount">
@@ -181,34 +269,7 @@
                         </div>
                             </div>
 
-                            <div class="col-lg-4 col-md-3 ">
-                            <div class="card card-employee-task">
-                                <div class="card-header" >
-                                    <h4 class=" activePost-text">Hired this month</h4>
-                                </div>
-                                <div class="card-body" style="height:308px; overflow:auto;">
-                                    <div class="employee-task d-flex justify-content-between align-items-center"
-                                         v-for="mnth_hir1 in mnth_hir" data-bs-target="#viewhiredcandidate"
-                                         data-bs-toggle="modal" style="cursor:pointer;">
-                                        <div class="d-flex flex-row">
-                                            <div class="avatar me-75" style="height:max-content">
-                                                <img :src="mnth_hir1.Photo"
-                                                     class="rounded" width="42" height="42" alt="Avatar"/>
-                                            </div>
-                                            <div class="my-auto">
-                                                <h6 class="Candidatename-text mb-0">{{ mnth_hir1.CandName }}</h6>
-                                                <small>{{ mnth_hir1.PostTitle }}</small>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex" style="float: right; max-width: 25%; ">
-                                            <small class="Candidatename-text me-75"
-                                                   style=" font-size:11px; ">{{ mnth_hir1.updatedOn }}</small>
-                                        </div>
-                                    </div>
-                                    <hr/>
-                                </div>
-                            </div>
-                        </div>
+                          
                         <!--/ Hired candidate Card -->
                         <!--  hired candidate  -->
                         <div class="modal fade" id="viewhiredcandidate" tabindex="-1" aria-labelledby="addNewCardTitle"
@@ -306,8 +367,35 @@
                         </div>
 
 
-<div class="row activity-row">
-
+<div class="row  ">
+    <div class="col-lg-4 col-md-3 activity-row">
+                            <div class="card card-employee-task">
+                                <div class="card-header" >
+                                    <h4 class=" activePost-text">Hired this month</h4>
+                                </div>
+                                <div class="card-body" style="height:308px; overflow:auto;">
+                                    <div class="employee-task d-flex justify-content-between align-items-center"
+                                         v-for="mnth_hir1 in mnth_hir" data-bs-target="#viewhiredcandidate"
+                                         data-bs-toggle="modal" style="cursor:pointer;">
+                                        <div class="d-flex flex-row">
+                                            <div class="avatar me-75" style="height:max-content">
+                                                <img :src="mnth_hir1.Photo"
+                                                     class="rounded" width="42" height="42" alt="Avatar"/>
+                                            </div>
+                                            <div class="my-auto">
+                                                <h6 class="Candidatename-text mb-0">{{ mnth_hir1.CandName }}</h6>
+                                                <small>{{ mnth_hir1.PostTitle }}</small>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex" style="float: right; max-width: 25%; ">
+                                            <small class="Candidatename-text me-75"
+                                                   style=" font-size:11px; ">{{ mnth_hir1.updatedOn }}</small>
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                </div>
+                            </div>
+                        </div>
     <div class="col-md-8">
         <div class="card Activity-performed">
                                 <div class="card-header d-flex justify-content-between ">
@@ -362,51 +450,7 @@
                             </div>
     </div>
 
-<div class="col-md-4">
-    <div class=" card-hires-source">
-                                <div class="card-header" >
-                                    <h4 class=" activePost-text">Hires by source</h4>
-                                </div>
-                                <div class="card-body mx-3 py-2">
-                                <div class="py-2 d-flex justify-content-between ">
-<div class="source-logo">
-    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
-  <path d="M36 31C36 33.762 33.762 36 31 36H5C2.239 36 0 33.762 0 31V5C0 2.238 2.239 0 5 0H31C33.762 0 36 2.238 36 5V31Z" fill="#0288D1"/>
-  <path d="M6 13H11V30H6V13ZM8.485 11H8.457C6.965 11 6 9.888 6 8.499C6 7.08 6.995 6 8.514 6C10.035 6 10.972 7.08 11 8.499C11 9.887 10.035 11 8.485 11ZM30 30H25V20.901C25 18.703 23.775 17.203 21.808 17.203C20.307 17.203 19.495 18.215 19.101 19.193C18.957 19.543 19 20.511 19 21V30H14V13H19V15.616C19.721 14.5 20.85 13 23.738 13C27.316 13 29.999 15.25 29.999 20.274L30 30Z" fill="white"/>
-</svg>
-</div>
-<div class="source-text mx-3">
-    <h4 class=" activePost-text">Linked In</h4>
 
-</div>
- 
-
-                                </div>
-                                <div class="  d-flex justify-content-between ">
-<div class="source-logo">
-    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
-  <path d="M20.8125 2.25C12.0938 2.25 6.75 12.6562 6.75 18C6.75 18 10.4062 4.5 21.375 4.5C25.4531 4.5 28.125 6.75 28.125 6.75C28.125 6.75 27 2.25 20.8125 2.25ZM19.6875 7.875C18.6432 7.875 17.6417 8.28984 16.9033 9.02827C16.1648 9.76669 15.75 10.7682 15.75 11.8125C15.75 12.8568 16.1648 13.8583 16.9033 14.5967C17.6417 15.3352 18.6432 15.75 19.6875 15.75C20.7318 15.75 21.7333 15.3352 22.4717 14.5967C23.2102 13.8583 23.625 12.8568 23.625 11.8125C23.625 10.7682 23.2102 9.76669 22.4717 9.02827C21.7333 8.28984 20.7318 7.875 19.6875 7.875ZM22.5 18C22.5 18 21.375 19.125 16.875 19.125V30.9375C16.875 32.4911 18.1339 33.75 19.6875 33.75C21.2411 33.75 22.5 32.4911 22.5 30.9375V18Z" fill="black"/>
-</svg>
-</div>
-<div class="source-text mx-3">
-    <h4 class=" activePost-text">Indeed</h4>
-
-</div>
-
-                                </div>
-                                <div class="  d-flex justify-content-between ">
-<div class="source-logo">
-  
-</div>
-<div class="source-text mx-3">
-    <h4 class=" activePost-text">Others</h4>
-
-</div>
-
-                                </div>
-                                </div>
-                            </div>
-</div>
 
 
     <div class="modal fade" id="viewactivityperformed" tabindex="-1" aria-labelledby="addNewCardTitle"
@@ -543,9 +587,40 @@
 </template>
 
 <script>
+import VueApexCharts from 'vue-apexcharts'
+
 export default {
+    components:{
+        apexchart: VueApexCharts,
+    },
     data() {
         return {
+
+            chartOptionsbar: {
+    chart: {
+        type: 'bar',
+        // stacked: true,
+    },
+    xaxis: {
+        categories: ['01 Week', '02 Week', '03 Week', '04 Week', '05 Week'],
+    },
+    yaxis: {
+        max: 10,
+    },
+},
+chartSeriesbar: [
+        ],
+            chartOptionsdonut: {
+                chart: {
+                    type: 'donut',
+                },
+                responsive: [{
+              breakpoint: 300,
+            }],
+            labels: ['Total Candidates', 'Hired Candidates'],
+            },
+
+            chartSeriesdonut: [0, 0],
             a: 1,
             b: 1,
             c: 1,
@@ -621,14 +696,48 @@ export default {
             })
             .catch(error => {
             });
+            axios.get('hiringgraphdata')
+        .then(response => {
+            const data = response.data;
+            this.chartSeriesdonut = [data.hired_candidates, data.total_candidates];
+            console.log(this.chartSeriesdonut)
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
 
+
+        axios.get('weeklygraphdata')
+  .then(response => {
+    const data = response.data;
+    console.log('API Response:', data);
+    this.weeklydata = data;
+    // Get all keys except 'week_number'
+    const valueKeys = Object.keys(this.weeklydata[0]).filter(key => key !== 'week_number');
+console.log(valueKeys)
+    // Map each key to a series
+    this.chartSeriesbar = valueKeys.map((key, index) => {
+      return {
+        name: key.replace('_', ' '), // Use key as series name
+        data: this.weeklydata.map(item => item[key]),
+      };
+    });
+console.log(this.chartSeriesbar)
+    // Update x-axis categories
+    this.chartOptionsbar.xaxis.categories = this.weeklydata.map(item => `${item.week_number}`);
+console.log(this.chartOptionsbar.xaxis.categories)
+})
+  .catch(error => {
+    console.error('API Error:', error);
+    // Handle errors
+  });
     }
 }
 </script>
 <style>
 .custumcard{
-    width: 249px;
-height: 139px;
+    max-width: 249px;
+    max-height: 139px;
 flex-shrink: 0;
 border-radius: 20px;
 border: 10px;
@@ -665,23 +774,23 @@ line-height: normal;
 letter-spacing: 0.14px;
 }
 .cardlogo{
-    width: 16px;
-height: 9px;
+    max-width: 16px;
+    max-height: 9px;
 /* transform: rotate(90deg); */
 flex-shrink: 0;
 }
 .activePost-card{
 
-    width: 822px;
-height: 298px;
+    max-width: 822px;
+    max-height: 420px;
 flex-shrink: 0;
 border-radius: 14px;
 background: #FFF;
 box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
 .activePost-text{
-    width: 600px;
-height: 32px;
+    max-width: 600px;
+    max-height: 32px;
 flex-shrink: 0;
 color: #000;
 font-family: 'Poppins',sans-serif;
@@ -701,8 +810,8 @@ line-height: normal;
 letter-spacing: 0.16px;
 }
 .inbox-activepost{
-    width: 77px;
-height: 21px;
+    max-width: 77px;
+    max-height: 21px;
 flex-shrink: 0;
 border-radius: 4px;
 opacity: 0.8;
@@ -715,8 +824,8 @@ background: #37bce0;
 }
 
 .interview-activepost{
-    width: 77px;
-height: 21px;
+    max-width: 77px;
+    max-height: 21px;
 flex-shrink: 0;
 border-radius: 4px;
 opacity: 0.8;
@@ -728,8 +837,8 @@ display: flex;
 background: #FF6900;
 }
 .hired-activepost{
-    width: 77px;
-height: 21px;
+    max-width: 77px;
+    max-height: 21px;
 flex-shrink: 0;
 border-radius: 4px;
 opacity: 0.8;
@@ -786,7 +895,7 @@ text-align: center; /* If you want to center the text horizontally */
     margin-top: 10px;
 }
 .card-employee-task{
-    width: 350px;
+    width: 400px;
 height: 402px;
 flex-shrink: 0;
 border-radius: 14px;
@@ -804,15 +913,16 @@ letter-spacing: 0.14px;
 }
 .activity-row{
     position: relative;
-    top: -90px;
+    top: -180px;
 }
 .Activity-performed{
-    width: 820px;
-height: 344px;
+    max-width: 820px;
+    max-height: 370px;
 flex-shrink: 0;
 border-radius: 14px;
 background: #FFF;
 box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+/* margin-top: 50px; */
 }
 .activePost-seall{
     color: #000;
@@ -825,19 +935,18 @@ line-height: normal;
 letter-spacing: 0.12px;
 }
 .card-hires-source{
-    width: 220px;
-height: 230px;
+    max-width: 400px;
+    max-height: 230px;
 flex-shrink: 0;
 border-radius: 14px;
 background: #FFF;
 box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-position: relative;
-    top: 90px
+
 
 }
 .source-logo{
-    width: 36px;
-height: 36px;
+    max-width: 36px;
+    max-height: 36px;
 flex-shrink: 0;
 }
 .source-text{
@@ -848,6 +957,39 @@ font-style: normal;
 font-weight: 500;
 line-height: normal;
 letter-spacing: 0.14px;
+}
+.donut-charts{
+    max-width: 400px;
+    max-height: 370px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.greenboxes{
+    /* margin-top: 20px; */
+    max-width: 16px;
+    max-height: 16px;
+/* flex-shrink: 0; */
+border-radius: 2px;
+background-color: rgb(0, 227, 150)
+}
+.blueboxes{
+    /* margin-top: 20px; */
+    max-width: 16px;
+    max-height: 16px;
+
+border-radius: 2px;
+background-color: rgb(0, 143, 251)
+}
+.bar-charts{
+    margin-right: 50px;
+    max-width: 822px;
+max-height: 370px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
 </style>
 
