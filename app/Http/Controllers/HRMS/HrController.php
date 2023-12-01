@@ -8093,7 +8093,9 @@ $arr='Arrears updated';
     public function organization_chart()
     {
         $company_id = "632462982ad6e";
-        $team = DB::connection('sqlsrv2')->select("SET NOCOUNT ON ;EXEC [dbo].[Get_reporting_tree] @id = '1', @companyid = N'" . company_id() . "'");
+        $team = DB::connection('sqlsrv2')->select("SET NOCOUNT ON ;EXEC [dbo].[Get_reporting_tree] ");
+    //    dd($team); 
+        
         return request()->json(200, $team);
     }
 

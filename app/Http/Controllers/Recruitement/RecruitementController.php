@@ -705,7 +705,7 @@ public function weekly_hiring(){
             DB::raw('COUNT(c.CandID) AS total_candidates'),
             DB::raw('SUM(CASE WHEN i.hire_sts = 1 THEN 1 ELSE 0 END) AS hired_candidates')
         )
-        ->whereMonth('c.CreatedOn', '=', now()->month) // Filter for the current month
+        ->whereBetween('c.CreatedOn', [now()->subWeeks(5), now()]) // Filter for the last five weeks
         ->groupBy(DB::raw('DATEPART(WEEK, c.CreatedOn)'))
         ->orderBy('week_number')
         ->get();

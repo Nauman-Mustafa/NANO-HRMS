@@ -41,7 +41,7 @@ import TreeChart from "vue-tree-chart";
      emp_detail:'',
      ds: {
      image_url: "./public/images/profile_images/pro.png",
-     name:'Sohail Afzal Malik',
+     name:'Nauman Mustafa',
      title:'Chairman',
      extend:false,
      children: [  ],
@@ -54,7 +54,7 @@ import TreeChart from "vue-tree-chart";
                  this.timeout = setTimeout(() => {
                  }, 5000)
 
-                 this.seting(2);
+                 this.seting(3608);
              },
  checkchild(id){
          let n=0;
@@ -94,7 +94,7 @@ import TreeChart from "vue-tree-chart";
   },
       },
          mounted() {
-           axios.get('getindemployee_detail/' + 2)
+           axios.get('getindemployee_detail/' + 3608)
                  .then(data => {
                      this.emp_detail = data.data.data;
 
@@ -106,6 +106,7 @@ import TreeChart from "vue-tree-chart";
            {
 
             this.team = response.data;
+            console.log(this.team)
             this.delay();
           })
            .catch(error => { });
