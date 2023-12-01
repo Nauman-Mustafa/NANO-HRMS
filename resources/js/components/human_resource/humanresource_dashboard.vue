@@ -15,6 +15,66 @@
                     </div>
                 </div>
                 <div class="content-body">
+                <div class="row-attendance">
+                    <div class="head-text">
+                    Today's Employee Attendance
+                    </div>
+                    <div class="emp-attendance">
+                        <div class="col-md-2">
+                            <div class="total-emp">
+                               <div class="total-no">
+                                386
+                               </div>
+                               <div class="total-text">
+                                Total Employees
+                               </div>
+                            </div>
+                        </div>
+                       <div class="col-md-2">
+                        <div class="present-emp">
+                            <div class="present-no">
+                                357
+                            </div>
+                            <div class="present-text">
+                                Present
+                            </div>
+                        </div>
+                       </div>
+                       <div class="col-md-2">
+                        <div class="late-emp">
+                            <div class="late-no">
+                                96
+                            </div>
+                            <div class="late-text">
+                                Late
+                            </div>
+                        </div>
+                       </div>
+                       <div class="col-md-2">
+                        <div class="absent-emp">
+                            <div class="absent-no">
+                                29
+                            </div>
+                            <div class="absent-text">
+                                Absent
+                            </div>
+                        </div>
+                       </div>
+                       <div class="col-md-2">
+                        <div class="leave-emp">
+                            <div class="leave-no">
+                                12
+                            </div>
+                            <div class="absent-text">
+                                Leave
+                            </div>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+
+
+
 
                     <div class="row match-height">
                         <!-- Medal Card -->
@@ -1302,3 +1362,186 @@ export default {
     }
 }
 </script>
+<style>
+.row-attendance{
+    max-width: 100%;
+    max-height: 200px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #FFF;
+    padding: 10px;
+
+}
+.head-text{
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    padding: 5px;
+}
+.emp-attendance{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.total-emp{
+    max-width: 120%;
+    max-height: 120px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: #F9F9F9;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    margin: 10px;
+}
+.total-no{
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    padding: 5px;
+}
+.total-text{
+    color: #000;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.16px;
+    
+}
+.present-emp{
+    max-width: 120%;
+    max-height: 120px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: #F9F9F9;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    margin: 10px;
+}
+.present-no{
+    color: #1FC048;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    padding: 5px;
+}
+.present-text{
+    color: #1FC048;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.16px;
+}
+.late-emp{
+    max-width: 120%;
+    max-height: 120px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: #F9F9F9;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    margin: 10px;
+}
+.late-no{
+    color: #0070F2;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    padding: 5px;
+}
+.late-text{
+    color: #0070F2;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.16px;
+}
+.absent-emp{
+    max-width: 120%;
+    max-height: 120px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: #F9F9F9;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    margin: 10px;
+}
+.absent-no{
+    color: #DC0000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    padding: 5px;
+}
+.absent-text{
+    color: #DC0000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.16px;
+}
+.leave-emp{
+    max-width: 120%;
+    max-height: 120px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: #F9F9F9;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    margin: 10px;
+}
+.leave-no{
+    color: #FF6900;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    padding: 5px;
+
+}
+.leave-text{
+    color: #FF6900;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.16px;
+}
+
+</style>

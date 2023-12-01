@@ -133,302 +133,143 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="card">
-                                <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h4 class="card-title">Candidates ratio</h4>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                         stroke-linejoin="round"
-                                         class="feather feather-help-circle font-medium-3 text-muted cursor-pointer">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                                    </svg>
+                    <div class="row my-5">
+                        <div class="bar-charts card  ">
+                            <div class="card-header" >
+                                    <h4 class=" activePost-text">Last 5 Months Hiring </h4>
                                 </div>
-                                <div class="card-body p-0" style="position: relative;">
-                                    <div id="goal-overview-radial-bar-chart" class="my-2" style="min-height: 236px;">
-                                        <div id="apexchartsk5hzssku"
-                                             class="apexcharts-canvas apexchartsk5hzssku apexcharts-theme-light"
-                                             style="width: 382px; height: 205.633px;">
-                                            <svg id="SvgjsSvg1730" width="382" height="205.63333333333335"
-                                                 xmlns="http://www.w3.org/2000/svg" version="1.1"
-                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                 xmlns:svgjs="http://svgjs.com/svgjs" class="apexcharts-svg"
-                                                 xmlns:data="ApexChartsNS" transform="translate(0, 0)"
-                                                 style="background: transparent;">
-                                                <g id="SvgjsG1732" class="apexcharts-inner apexcharts-graphical"
-                                                   transform="translate(68.5, -10)">
+            
+                            <apexchart width="800" height="320" type="bar" :options="chartOptionsbar" :series="chartSeriesbar"></apexchart>
+                        
+                   
+                           
+                       
+                        </div>
 
-                                                    <g id="SvgjsG1736" class="apexcharts-radialbar">
-                                                        <g id="SvgjsG1737">
-                                                            <g id="SvgjsG1738" class="apexcharts-tracks">
-                                                                <g id="SvgjsG1739"
-                                                                   class="apexcharts-radialbar-track apexcharts-track"
-                                                                   rel="1">
-                                                                    <path id="apexcharts-radialbarTrack-0"
-                                                                          d="M 77.85670731707313 184.82445114399718 A 89.28658536585367 89.28658536585367 0 1 1 167.14329268292684 184.82445114399718"
-                                                                          fill="none" fill-opacity="1"
-                                                                          stroke="rgba(235,233,241,0.85)"
-                                                                          stroke-opacity="1" stroke-linecap="round"
-                                                                          stroke-width="3.5304878048780495"
-                                                                          stroke-dasharray="0"
-                                                                          class="apexcharts-radialbar-area"
-                                                                          data:pathOrig="M 77.85670731707313 184.82445114399718 A 89.28658536585367 89.28658536585367 0 1 1 167.14329268292684 184.82445114399718">
-                                                                    </path>
-                                                                </g>
-                                                            </g>
-                                                            <g id="SvgjsG1745">
-                                                                <g id="SvgjsG1749"
-                                                                   class="apexcharts-series apexcharts-radial-series"
-                                                                   seriesName="seriesx1" rel="1" data:realIndex="0">
-                                                                    <path id="SvgjsPath1754"
-                                                                          d="M 77.85670731707313 184.82445114399718 A 89.28658536585367 89.28658536585367 0 1 1 210.6873193374061 121.46749921697622"
-                                                                          fill="none" fill-opacity="0.85"
-                                                                          stroke="url(#SvgjsLinearGradient1750)"
-                                                                          stroke-opacity="1" stroke-linecap="round"
-                                                                          stroke-width="7.060975609756099"
-                                                                          stroke-dasharray="0"
-                                                                          class="apexcharts-radialbar-area apexcharts-radialbar-slice-0"
-                                                                          data:angle="249" data:value="83" index="0"
-                                                                          j="0"
-                                                                          data:pathOrig="M 77.85670731707313 184.82445114399718 A 89.28658536585367 89.28658536585367 0 1 1 210.6873193374061 121.46749921697622"
-                                                                          filter="url(#SvgjsFilter1782)">
-                                                                    </path>
-                                                                </g>
-                                                                <g id="SvgjsG1747" class="apexcharts-datalabels-group"
-                                                                   transform="translate(0, 0) scale(1)"
-                                                                   style="opacity: 1;">
-                                                                    <text id="SvgjsText1748"
-                                                                          font-family="Helvetica, Arial, sans-serif"
-                                                                          x="122.5" y="123.5" text-anchor="middle"
-                                                                          dominant-baseline="auto" font-size="2.86rem"
-                                                                          font-weight="600" fill="#5e5873"
-                                                                          class="apexcharts-text apexcharts-datalabel-value"
-                                                                          style="font-family: Helvetica, Arial, sans-serif;">
-                                                                        {{ parseInt((ct_ong_int / candsct) * 100) }}%
-                                                                    </text>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                    <line id="SvgjsLine1764" x1="0" y1="0" x2="245" y2="0"
-                                                          stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1"
-                                                          class="apexcharts-ycrosshairs"></line>
-                                                    <line id="SvgjsLine1765" x1="0" y1="0" x2="245" y2="0"
-                                                          stroke-dasharray="0" stroke-width="0"
-                                                          class="apexcharts-ycrosshairs-hidden"></line>
-                                                </g>
-                                                <g id="SvgjsG1733" class="apexcharts-annotations"></g>
-                                            </svg>
-                                            <div class="apexcharts-legend"></div>
-                                        </div>
-                                    </div>
-                                    <div class="row border-top text-center mx-0">
-                                        <div class="col-6 border-end py-1">
-                                            <p class="card-text text-muted mb-0">Total</p>
-                                            <h3 class="fw-bolder mb-0">{{ candsct }}</h3>
-                                        </div>
-                                        <div class="col-6 py-1">
-                                            <p class="card-text text-muted mb-0">In Progress</p>
-                                            <h3 class="fw-bolder mb-0">{{ ct_ong_int }}</h3>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="donut-charts card">
+                            <!-- <apexchart width="500" type="bar" :options="chartOptionsbar" :series="chartSeriesbar"></apexchart> -->
+
+                            <apexchart class="my-4" width="400" height="480" type="donut" :options="chartOptionsdonut" :series="chartSeriesdonut"></apexchart>
+                     
+                    <div class=" d-flex my-4 ">
+                        <div class="d-flex mx-2">
+                            <div class="greenboxes mx-2">   </div>
+                            <div>
+                                <h4 class="cardstext">Total Candidate </h4>
+                                <h4 class="cardstext mx-5">{{ chartSeriesdonut[1] }}</h4>
+
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="card">
-                                <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h4 class="card-title">Hiring ratio</h4>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                         stroke-linejoin="round"
-                                         class="feather feather-help-circle font-medium-3 text-muted cursor-pointer">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                                    </svg>
+                       
+                      <div class="d-flex">
+                        <div class="blueboxes mx-2">   </div>
+                        <div>
+                            <h4 class="cardstext">Hired Candidate</h4>
+
+                                <h4 class="cardstext mx-5">{{ chartSeriesdonut[0] }}</h4>
+
+                            </div>
+                      </div>
+                    </div>
+                           
+                       
+                        </div>
+                    </div>
+
+
+<div class="row">
+    <div class="col-md-4">
+    <div class=" card-hires-source">
+                                <div class="card-header" >
+                                    <h4 class=" activePost-text">Hires by source</h4>
                                 </div>
-                                <div class="card-body p-0" style="position: relative;">
-                                    <div id="goal-overview-radial-bar-chart" class="my-2" style="min-height: 236px;">
-                                        <div id="apexchartsk5hzssku"
-                                             class="apexcharts-canvas apexchartsk5hzssku apexcharts-theme-light"
-                                             style="width: 382px; height: 205.633px;">
-                                            <svg id="SvgjsSvg1730" width="382" height="205.63333333333335"
-                                                 xmlns="http://www.w3.org/2000/svg" version="1.1"
-                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                 xmlns:svgjs="http://svgjs.com/svgjs" class="apexcharts-svg"
-                                                 xmlns:data="ApexChartsNS" transform="translate(0, 0)"
-                                                 style="background: transparent;">
-                                                <g id="SvgjsG1732" class="apexcharts-inner apexcharts-graphical"
-                                                   transform="translate(68.5, -10)">
-                                                    <defs id="SvgjsDefs1731">
-                                                        <clipPath id="gridRectMaskk5hzssku">
-                                                            <rect id="SvgjsRect1734" width="251" height="217" x="-3"
-                                                                  y="-1" rx="0" ry="0" opacity="1" stroke-width="0"
-                                                                  stroke="none" stroke-dasharray="0" fill="#fff"></rect>
-                                                        </clipPath>
-                                                        <clipPath id="gridRectMarkerMaskk5hzssku">
-                                                            <rect id="SvgjsRect1735" width="249" height="219" x="-2"
-                                                                  y="-2" rx="0" ry="0" opacity="1" stroke-width="0"
-                                                                  stroke="none" stroke-dasharray="0" fill="#fff"></rect>
-                                                        </clipPath>
-                                                        <linearGradient id="SvgjsLinearGradient1740" x1="0" y1="1"
-                                                                        x2="1" y2="1">
-                                                            <stop id="SvgjsStop1741" stop-opacity="1"
-                                                                  stop-color="rgba(40,199,111,1)" offset="0"></stop>
-                                                            <stop id="SvgjsStop1742" stop-opacity="1"
-                                                                  stop-color="rgba(235,233,241,1)" offset="1"></stop>
-                                                            <stop id="SvgjsStop1743" stop-opacity="1"
-                                                                  stop-color="rgba(235,233,241,1)" offset="1"></stop>
-                                                        </linearGradient>
-                                                        <linearGradient id="SvgjsLinearGradient1750" x1="0" y1="1"
-                                                                        x2="1" y2="1">
-                                                            <stop id="SvgjsStop1751" stop-opacity="1"
-                                                                  stop-color="rgba(40,199,111,1)" offset="0"></stop>
-                                                            <stop id="SvgjsStop1752" stop-opacity="1"
-                                                                  stop-color="rgba(81,229,168,1)" offset="1"></stop>
-                                                            <stop id="SvgjsStop1753" stop-opacity="1"
-                                                                  stop-color="rgba(81,229,168,1)" offset="1"></stop>
-                                                        </linearGradient>
-                                                        <filter id="SvgjsFilter1782" filterUnits="userSpaceOnUse"
-                                                                width="200%" height="200%" x="-50%" y="-50%">
-                                                            <feFlood id="SvgjsFeFlood1783" flood-color="#000000"
-                                                                     flood-opacity="0.1" result="SvgjsFeFlood1783Out"
-                                                                     in="SourceGraphic"></feFlood>
-                                                            <feComposite id="SvgjsFeComposite1784"
-                                                                         in="SvgjsFeFlood1783Out" in2="SourceAlpha"
-                                                                         operator="in"
-                                                                         result="SvgjsFeComposite1784Out"></feComposite>
-                                                            <feOffset id="SvgjsFeOffset1785" dx="1" dy="1"
-                                                                      result="SvgjsFeOffset1785Out"
-                                                                      in="SvgjsFeComposite1784Out"></feOffset>
-                                                            <feGaussianBlur id="SvgjsFeGaussianBlur1786"
-                                                                            stdDeviation="3 "
-                                                                            result="SvgjsFeGaussianBlur1786Out"
-                                                                            in="SvgjsFeOffset1785Out"></feGaussianBlur>
-                                                            <feMerge id="SvgjsFeMerge1787" result="SvgjsFeMerge1787Out"
-                                                                     in="SourceGraphic">
-                                                                <feMergeNode id="SvgjsFeMergeNode1788"
-                                                                             in="SvgjsFeGaussianBlur1786Out"></feMergeNode>
-                                                                <feMergeNode id="SvgjsFeMergeNode1789"
-                                                                             in="[object Arguments]"></feMergeNode>
-                                                            </feMerge>
-                                                            <feBlend id="SvgjsFeBlend1790" in="SourceGraphic"
-                                                                     in2="SvgjsFeMerge1787Out" mode="normal"
-                                                                     result="SvgjsFeBlend1790Out"></feBlend>
-                                                        </filter>
-                                                    </defs>
-                                                    <g id="SvgjsG1736" class="apexcharts-radialbar">
-                                                        <g id="SvgjsG1737">
-                                                            <g id="SvgjsG1738" class="apexcharts-tracks">
-                                                                <g id="SvgjsG1739"
-                                                                   class="apexcharts-radialbar-track apexcharts-track"
-                                                                   rel="1">
-                                                                    <path id="apexcharts-radialbarTrack-0"
-                                                                          d="M 77.85670731707313 184.82445114399718 A 89.28658536585367 89.28658536585367 0 1 1 167.14329268292684 184.82445114399718"
-                                                                          fill="none" fill-opacity="1"
-                                                                          stroke="rgba(235,233,241,0.85)"
-                                                                          stroke-opacity="1" stroke-linecap="round"
-                                                                          stroke-width="3.5304878048780495"
-                                                                          stroke-dasharray="0"
-                                                                          class="apexcharts-radialbar-area"
-                                                                          data:pathOrig="M 77.85670731707313 184.82445114399718 A 89.28658536585367 89.28658536585367 0 1 1 167.14329268292684 184.82445114399718"></path>
-                                                                </g>
-                                                            </g>
-                                                            <g id="SvgjsG1745">
-                                                                <g id="SvgjsG1749"
-                                                                   class="apexcharts-series apexcharts-radial-series"
-                                                                   seriesName="seriesx1" rel="1" data:realIndex="0">
-                                                                    <path id="SvgjsPath1754"
-                                                                          d="M 77.85670731707313 184.82445114399718 A 89.28658536585367 89.28658536585367 0 1 1 210.6873193374061 121.46749921697622"
-                                                                          fill="none" fill-opacity="0.85"
-                                                                          stroke="url(#SvgjsLinearGradient1750)"
-                                                                          stroke-opacity="1" stroke-linecap="round"
-                                                                          stroke-width="7.060975609756099"
-                                                                          stroke-dasharray="0"
-                                                                          class="apexcharts-radialbar-area apexcharts-radialbar-slice-0"
-                                                                          data:angle="249" data:value="83" index="0"
-                                                                          j="0"
-                                                                          data:pathOrig="M 77.85670731707313 184.82445114399718 A 89.28658536585367 89.28658536585367 0 1 1 210.6873193374061 121.46749921697622"
-                                                                          filter="url(#SvgjsFilter1782)"></path>
-                                                                </g>
-                                                                <circle id="SvgjsCircle1746" r="82.52134146341464"
-                                                                        cx="122.5" cy="107.5"
-                                                                        class="apexcharts-radialbar-hollow"
-                                                                        fill="transparent"></circle>
-                                                                <g id="SvgjsG1747" class="apexcharts-datalabels-group"
-                                                                   transform="translate(0, 0) scale(1)"
-                                                                   style="opacity: 1;">
-                                                                    <text id="SvgjsText1748"
-                                                                          font-family="Helvetica, Arial, sans-serif"
-                                                                          x="122.5" y="123.5" text-anchor="middle"
-                                                                          dominant-baseline="auto" font-size="2.86rem"
-                                                                          font-weight="600" fill="#5e5873"
-                                                                          class="apexcharts-text apexcharts-datalabel-value"
-                                                                          style="font-family: Helvetica, Arial, sans-serif;">
-                                                                        {{ parseInt((cnd_hir / ct_ong_int) * 100) }}%
-                                                                    </text>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                    <line id="SvgjsLine1764" x1="0" y1="0" x2="245" y2="0"
-                                                          stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1"
-                                                          class="apexcharts-ycrosshairs"></line>
-                                                    <line id="SvgjsLine1765" x1="0" y1="0" x2="245" y2="0"
-                                                          stroke-dasharray="0" stroke-width="0"
-                                                          class="apexcharts-ycrosshairs-hidden"></line>
-                                                </g>
-                                                <g id="SvgjsG1733" class="apexcharts-annotations"></g>
-                                            </svg>
-                                            <div class="apexcharts-legend"></div>
-                                        </div>
-                                    </div>
-                                    <div class="row border-top text-center mx-0">
-                                        <div class="col-6 border-end py-1">
-                                            <p class="card-text text-muted mb-0">Total</p>
-                                            <h3 class="fw-bolder mb-0">{{ ct_ong_int }}</h3>
-                                        </div>
-                                        <div class="col-6 py-1">
-                                            <p class="card-text text-muted mb-0">Hired</p>
-                                            <h3 class="fw-bolder mb-0">{{ cnd_hir }}</h3>
-                                        </div>
-                                    </div>
+                                <div class="card-body mx-3 py-2">
+                                <div class="py-2 d-flex justify-content-between ">
+<div class="source-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+  <path d="M36 31C36 33.762 33.762 36 31 36H5C2.239 36 0 33.762 0 31V5C0 2.238 2.239 0 5 0H31C33.762 0 36 2.238 36 5V31Z" fill="#0288D1"/>
+  <path d="M6 13H11V30H6V13ZM8.485 11H8.457C6.965 11 6 9.888 6 8.499C6 7.08 6.995 6 8.514 6C10.035 6 10.972 7.08 11 8.499C11 9.887 10.035 11 8.485 11ZM30 30H25V20.901C25 18.703 23.775 17.203 21.808 17.203C20.307 17.203 19.495 18.215 19.101 19.193C18.957 19.543 19 20.511 19 21V30H14V13H19V15.616C19.721 14.5 20.85 13 23.738 13C27.316 13 29.999 15.25 29.999 20.274L30 30Z" fill="white"/>
+</svg>
+</div>
+<div class="source-text mx-3">
+    <h4 class=" activePost-text">Linked In</h4>
+
+</div>
+ 
+
+                                </div>
+                                <div class="  d-flex justify-content-between ">
+<div class="source-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+  <path d="M20.8125 2.25C12.0938 2.25 6.75 12.6562 6.75 18C6.75 18 10.4062 4.5 21.375 4.5C25.4531 4.5 28.125 6.75 28.125 6.75C28.125 6.75 27 2.25 20.8125 2.25ZM19.6875 7.875C18.6432 7.875 17.6417 8.28984 16.9033 9.02827C16.1648 9.76669 15.75 10.7682 15.75 11.8125C15.75 12.8568 16.1648 13.8583 16.9033 14.5967C17.6417 15.3352 18.6432 15.75 19.6875 15.75C20.7318 15.75 21.7333 15.3352 22.4717 14.5967C23.2102 13.8583 23.625 12.8568 23.625 11.8125C23.625 10.7682 23.2102 9.76669 22.4717 9.02827C21.7333 8.28984 20.7318 7.875 19.6875 7.875ZM22.5 18C22.5 18 21.375 19.125 16.875 19.125V30.9375C16.875 32.4911 18.1339 33.75 19.6875 33.75C21.2411 33.75 22.5 32.4911 22.5 30.9375V18Z" fill="black"/>
+</svg>
+</div>
+<div class="source-text mx-3">
+    <h4 class=" activePost-text">Indeed</h4>
+
+</div>
+
+                                </div>
+                                <div class="  d-flex justify-content-between ">
+<div class="source-logo">
+  
+</div>
+<div class="source-text mx-3">
+    <h4 class=" activePost-text">Others</h4>
+
+</div>
+
+                                </div>
                                 </div>
                             </div>
+</div>
+   
+    <div class="col-md-8 ">
+                            <div class="activePost-card card">
+                                <div class="card-body"  style=" overflow-y: auto; ">
+    <h4 class="activePost-text my-2">Active Posts</h4>
+
+    <div  class=" my-4 mx-2 d-flex justify-content-between" v-for="(jobData,jobTitle) in Activejobcount">
+        <div class="col-md-3">
+            <h4 class="Posttitle-text my-2 ">{{ jobTitle }}</h4>
+
+        </div>
+        <div class="col-md-3">
+            <div class="inbox-activepost" style="color: #0070F2;"> 
+                <h6 class="inbox-activepost-text mx-5"  >{{ jobData.total_applicants }} Application
+
+                </h6>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="interview-activepost"> 
+                <h6 class="interview-activepost-text" >{{ jobData.ongoing_interviews }} inerview
+
+                </h6>
+        </div>
+      
+                               
+                                 
+                                </div>
+
+                                <div class="col-md-3">
+            <div class="hired-activepost"> 
+                <h6 class="hired-activepost-text" >{{ jobData.persons_hired }} hired
+
+                </h6>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+</div>
                         </div>
-                        <!-- Hired candidate Card -->
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="card card-employee-task">
-                                <div class="card-header">
-                                    <h4 class="card-title">Hired this month</h4>
-                                </div>
-                                <div class="card-body" style="height:308px; overflow:auto;">
-                                    <div class="employee-task d-flex justify-content-between align-items-center"
-                                         v-for="mnth_hir1 in mnth_hir" data-bs-target="#viewhiredcandidate"
-                                         data-bs-toggle="modal" style="cursor:pointer;">
-                                        <div class="d-flex flex-row">
-                                            <div class="avatar me-75" style="height:max-content">
-                                                <img src="public/app-assets/images/portrait/small/avatar-s-16.jpg"
-                                                     class="rounded" width="42" height="42" alt="Avatar"/>
-                                            </div>
-                                            <div class="my-auto">
-                                                <h6 class="mb-0">{{ mnth_hir1.CandName }}</h6>
-                                                <small>{{ mnth_hir1.PostTitle }}</small>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex" style="float: right; max-width: 25%; ">
-                                            <small class="text-muted me-75"
-                                                   style=" font-size:11px; ">{{ mnth_hir1.updatedOn }}</small>
-                                        </div>
-                                    </div>
-                                    <hr/>
-                                </div>
                             </div>
-                        </div>
+
+                          
                         <!--/ Hired candidate Card -->
                         <!--  hired candidate  -->
                         <div class="modal fade" id="viewhiredcandidate" tabindex="-1" aria-labelledby="addNewCardTitle"
@@ -523,59 +364,106 @@
                                 </div>
                             </div>
                         </div>
-                        <!--/  hired candidate  -->
-                    </div>
-                    <div class="col-md-12">
-                        <div clas="card" style="background-color:white !important">
-                            <div class="table-responsive" style="overflow-x: initial !important;">
-                                <table class="table mb-0">
-                                    <thead>
-                                    <tr>
-                                        <th style="width: 34%; text-align: center; white-space: nowrap;">Post name</th>
-                                        <th style="width: 21%; text-align: center; white-space: nowrap;">Applications
-                                            received
-                                        </th>
-                                        <th style="width: 0px; text-align: center; white-space: nowrap;"></th>
-                                        <th style="width: auto; text-align: center; white-space: nowrap;">Ongoing
-                                            interviews
-                                        </th>
-                                        <th style="width: auto; text-align: center; white-space: nowrap;">Offered</th>
-                                    </tr>
-                                    </thead>
-                                </table>
-                                <div class="table-responsive" style="max-height:300px ;overflow-y:auto;">
-                                    <table class="table mb-0">
-                                        <tbody>
-                                        <tr v-for="jobs1 in jobs" style="height: 1em; overflow: hidden;">
-                                            <td style="width:26%; vertical-align: middle; white-space:nowrap;"
-                                                colspan="2">
-                                                <h6 class="mb-0">{{ jobs1.PostTitle }}</h6>
-                                            </td>
-                                            <td style="font-size:0px; overflow: hidden; width: 0px; max-height:10px">
-                                                <span v-for="candidates1 in candidates"
-                                                      v-if="candidates1.JobID==jobs1.JobID">{{ a = a + 1 }}</span>
-                                            </td>
-                                            <td style="vertical-align: middle; text-align: center; white-space: nowrap;">
-                                                <span class="badge rounded-pill badge-light-primary me-1">{{ a }}</span>
-                                            </td>
-                                            <td style="font-size: 0px; overflow: hidden; width: 0px; max-height: 10px">
-                                                <span v-for="interview1 in interview"
-                                                      v-if="interview1.JobID==jobs1.JobID && interview1.hire_sts!='1'">{{ b = b + 1 }}</span>
-                                            </td>
-                                            <td style="width: 26%; vertical-align: middle; text-align: center; white-space: nowrap;">
-                                                <span class="badge rounded-pill badge-light-primary me-1">{{ b }}</span>
-                                            </td>
-                                            <td style="text-align: center; visibility: hidden; overflow: hidden; width: 13%;">
-                                                <span class="badge badge-light-danger">{{ a = 0 }}{{ b = 0 }}</span>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                        </div>
+
+
+<div class="row  ">
+    <div class="col-lg-4 col-md-3 activity-row">
+                            <div class="card card-employee-task">
+                                <div class="card-header" >
+                                    <h4 class=" activePost-text">Hired this month</h4>
+                                </div>
+                                <div class="card-body" style="height:308px; overflow:auto;">
+                                    <div class="employee-task d-flex justify-content-between align-items-center"
+                                         v-for="mnth_hir1 in mnth_hir" data-bs-target="#viewhiredcandidate"
+                                         data-bs-toggle="modal" style="cursor:pointer;">
+                                        <div class="d-flex flex-row">
+                                            <div class="avatar me-75" style="height:max-content">
+                                                <img :src="mnth_hir1.Photo"
+                                                     class="rounded" width="42" height="42" alt="Avatar"/>
+                                            </div>
+                                            <div class="my-auto">
+                                                <h6 class="Candidatename-text mb-0">{{ mnth_hir1.CandName }}</h6>
+                                                <small>{{ mnth_hir1.PostTitle }}</small>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex" style="float: right; max-width: 25%; ">
+                                            <small class="Candidatename-text me-75"
+                                                   style=" font-size:11px; ">{{ mnth_hir1.updatedOn }}</small>
+                                        </div>
+                                    </div>
+                                    <hr/>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12">
+    <div class="col-md-8">
+        <div class="card Activity-performed">
+                                <div class="card-header d-flex justify-content-between ">
+                            
+                                    <h4 class="activePost-text">Performed Activities</h4>
+                                    <h4 class="activePost-seall " data-bs-target="#viewactivityperformed"
+                                         data-bs-toggle="modal">see all</h4>
+                                </div>
+                                <div class="card-body" style="height: 500px; overflow: hidden;">
+                                    <ul class="timeline" v-for="recs1 in recs">
+                                    <li class="timeline-item" style="border-left-color: #c1c1c180 !important ">
+                                        <span class="timeline-point timeline-point-success timeline-point-indicator"
+                                              v-if="recs1.EventStatus=='Interview scheduled' || recs1.EventStatus=='Candidate added'"></span>
+                                        <span class="timeline-point timeline-point-success"
+                                              v-else-if="recs1.EventStatus=='Candidate shortlisted'">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round"
+                                                 class="feather feather-user"><path
+                                                d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12"
+                                                                                                             cy="7"
+                                                                                                             r="4"></circle></svg>
+                                        </span>
+                                        <span class="timeline-point timeline-point-success"
+                                              v-else-if="recs1.EventStatus=='Candidate hired'">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                                                 class="bi bi-person-check-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                      d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                                <path
+                                                    d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                            </svg>
+                                        </span>
+                                        <span class="timeline-point timeline-point-warning timeline-point-indicator"
+                                              v-else></span>
+                                        <div class="timeline-event">
+                                            <div
+                                                class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
+                                                <h6 class="mb-50">{{ recs1.EventStatus }}</h6>
+                                                <span class="timeline-event-time">{{ recs1.ActivityTime }}</span>
+                                            </div>
+                                            <p>{{ recs1.Description }}</p>
+                                            <hr/>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                    <hr/>
+                                </div>
+                               
+
+                            </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="viewactivityperformed" tabindex="-1" aria-labelledby="addNewCardTitle"
+                             aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-transparent">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body px-sm-5 mx-50 pb-5">
+                                        <!-- User Card -->
+                                        <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Activities Performed</h4>
@@ -621,6 +509,17 @@
                             </div>
                         </div>
                     </div>
+                                      
+
+                                        <!-- /User Card -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+</div>
+                 
+                   
                 </div>
                 <!-- view posts modal -->
                 <div class="modal fade" id="viewposts" tabindex="-1" aria-labelledby="pricingModalTitle"
@@ -688,9 +587,40 @@
 </template>
 
 <script>
+import VueApexCharts from 'vue-apexcharts'
+
 export default {
+    components:{
+        apexchart: VueApexCharts,
+    },
     data() {
         return {
+
+            chartOptionsbar: {
+    chart: {
+        type: 'bar',
+        // stacked: true,
+    },
+    xaxis: {
+        categories: ['01 Week', '02 Week', '03 Week', '04 Week', '05 Week'],
+    },
+    yaxis: {
+        max: 10,
+    },
+},
+chartSeriesbar: [
+        ],
+            chartOptionsdonut: {
+                chart: {
+                    type: 'donut',
+                },
+                responsive: [{
+              breakpoint: 300,
+            }],
+            labels: ['Total Candidates', 'Hired Candidates'],
+            },
+
+            chartSeriesdonut: [0, 0],
             a: 1,
             b: 1,
             c: 1,
@@ -704,6 +634,7 @@ export default {
             count: 1,
             mnth_hir: {},
             candidates: {},
+            Activejobcount:{},
             recs: {},
             jobs: {},
             cnd_hir: '',
@@ -756,14 +687,57 @@ export default {
             .then(data => this.candidates = data.data)
             .catch(error => {
             });
+            axios.get('Activejobscount') // Get all candidates
+            .then(data =>
+            {
+                console.log(data.data)
+                 this.Activejobcount = data.data
+            
+            })
+            .catch(error => {
+            });
+            axios.get('hiringgraphdata')
+        .then(response => {
+            const data = response.data;
+            this.chartSeriesdonut = [data.hired_candidates, data.total_candidates];
+            console.log(this.chartSeriesdonut)
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
 
+
+        axios.get('weeklygraphdata')
+  .then(response => {
+    const data = response.data;
+    console.log('API Response:', data);
+    this.weeklydata = data;
+    // Get all keys except 'week_number'
+    const valueKeys = Object.keys(this.weeklydata[0]).filter(key => key !== 'week_number');
+console.log(valueKeys)
+    // Map each key to a series
+    this.chartSeriesbar = valueKeys.map((key, index) => {
+      return {
+        name: key.replace('_', ' '), // Use key as series name
+        data: this.weeklydata.map(item => item[key]),
+      };
+    });
+console.log(this.chartSeriesbar)
+    // Update x-axis categories
+    this.chartOptionsbar.xaxis.categories = this.weeklydata.map(item => `${item.week_number}`);
+console.log(this.chartOptionsbar.xaxis.categories)
+})
+  .catch(error => {
+    console.error('API Error:', error);
+    // Handle errors
+  });
     }
 }
 </script>
 <style>
 .custumcard{
-    width: 249px;
-height: 139px;
+    max-width: 249px;
+    max-height: 139px;
 flex-shrink: 0;
 border-radius: 20px;
 border: 10px;
@@ -800,12 +774,223 @@ line-height: normal;
 letter-spacing: 0.14px;
 }
 .cardlogo{
-    width: 16px;
-height: 9px;
+    max-width: 16px;
+    max-height: 9px;
 /* transform: rotate(90deg); */
 flex-shrink: 0;
 }
+.activePost-card{
 
+    max-width: 822px;
+    max-height: 420px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.activePost-text{
+    max-width: 600px;
+    max-height: 32px;
+flex-shrink: 0;
+color: #000;
+font-family: 'Poppins',sans-serif;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 0.2px;
+}
+.Posttitle-text{
+    color: #949494;
+font-family: 'Poppins',sans-serif;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.16px;
+}
+.inbox-activepost{
+    max-width: 77px;
+    max-height: 21px;
+flex-shrink: 0;
+border-radius: 4px;
+opacity: 0.8;
+text-align: center;
+display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Set the height of the parent div to 100% */
+background: #37bce0;
+}
+
+.interview-activepost{
+    max-width: 77px;
+    max-height: 21px;
+flex-shrink: 0;
+border-radius: 4px;
+opacity: 0.8;
+text-align: center;
+display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Set the height of the parent div to 100% */
+background: #FF6900;
+}
+.hired-activepost{
+    max-width: 77px;
+    max-height: 21px;
+flex-shrink: 0;
+border-radius: 4px;
+opacity: 0.8;
+text-align: center;
+display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Set the height of the parent div to 100% */
+background: #1FC048;
+}
+.inbox-activepost-text{
+    color: #ffffff;
+    /* width: 77px;
+height: 21px; */
+flex-shrink: 0;
+font-family:'Poppins',sans-serif;
+font-size: 12px;
+font-style: normal;
+opacity: 1.2;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.12px;
+text-align: center; /* If you want to center the text horizontally */
+    margin-top: 10px;
+}
+.interview-activepost-text{
+    color: #fdfdfd;
+    /* width: 77px;
+height: 21px; */
+flex-shrink: 0;
+font-family:'Poppins',sans-serif;
+font-size: 12px;
+font-style: normal;
+opacity: 1.2;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.12px;
+text-align: center; /* If you want to center the text horizontally */
+    margin-top: 10px;
+}
+.hired-activepost-text{
+    color: #f7f7f7;
+    /* width: 77px;
+height: 21px; */
+flex-shrink: 0;
+font-family:'Poppins',sans-serif;
+font-size: 12px;
+font-style: normal;
+opacity: 1.2;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.12px;
+text-align: center; /* If you want to center the text horizontally */
+    margin-top: 10px;
+}
+.card-employee-task{
+    width: 400px;
+height: 402px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.Candidatename-text{
+    color: #000;
+    font-family:'Poppins',sans-serif;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 0.14px;
+}
+.activity-row{
+    position: relative;
+    top: -180px;
+}
+.Activity-performed{
+    max-width: 820px;
+    max-height: 370px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+/* margin-top: 50px; */
+}
+.activePost-seall{
+    color: #000;
+    font-family:'Poppins',sans-serif;
+cursor: pointer;
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 0.12px;
+}
+.card-hires-source{
+    max-width: 400px;
+    max-height: 230px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+
+
+}
+.source-logo{
+    max-width: 36px;
+    max-height: 36px;
+flex-shrink: 0;
+}
+.source-text{
+    color: #000;
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 0.14px;
+}
+.donut-charts{
+    max-width: 400px;
+    max-height: 370px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.greenboxes{
+    /* margin-top: 20px; */
+    max-width: 16px;
+    max-height: 16px;
+/* flex-shrink: 0; */
+border-radius: 2px;
+background-color: rgb(0, 227, 150)
+}
+.blueboxes{
+    /* margin-top: 20px; */
+    max-width: 16px;
+    max-height: 16px;
+
+border-radius: 2px;
+background-color: rgb(0, 143, 251)
+}
+.bar-charts{
+    margin-right: 50px;
+    max-width: 822px;
+max-height: 370px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
 </style>
 
 

@@ -20,6 +20,8 @@ Route::post('update_job', 'App\Http\Controllers\Recruitement\RecruitementControl
 Route::get('ind_job_detail2/{id}', 'App\Http\Controllers\Recruitement\RecruitementController@ind_job_detail');  //Individule job
 Route::get('/jobscount', 'App\Http\Controllers\Recruitement\RecruitementController@jobs_count');
 Route::get('/search-jobs/{postTitle}', 'App\Http\Controllers\Recruitement\RecruitementController@searchJobsByTitle');
+Route::get('/hiringgraphdata', 'App\Http\Controllers\Recruitement\RecruitementController@hiring_graphdata');
+Route::get('/weeklygraphdata', 'App\Http\Controllers\Recruitement\RecruitementController@weekly_hiring');
 
 // candidate
 Route::post('candidate','App\Http\Controllers\Recruitement\RecruitementController@add_candidate')->middleware('permission:Add new Candidates');
