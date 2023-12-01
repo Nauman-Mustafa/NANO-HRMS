@@ -867,4 +867,35 @@ public function weekly_hiring(){
 
         return request()->json(200,$data);
     }
+    public function hiring_graphdata()
+{
+    $result = DB::connection('sqlsrv2')
+        ->table('candidate_detail')
+        ->join('interview_detail', 'candidate_detail.CandID', '=', 'interview_detail.CandID')
+        ->select(
+            DB::raw('COUNT(candidate_detail.CandID) AS total_candidates'),
+            DB::raw('SUM(CASE WHEN interview_detail.hire_sts = 1 THEN 1 ELSE 0 END) AS hired_candidates')
+        )
+        ->first();
+
+    return $result;
+}
+
+    public function weekly_hiring(){
+        $weeklyHiringData = DB::connection('sqlsrv2')
+        ->table('Post_Job as p')
+        ->join('Candidate_Detail as c', 'p.JobID', '=', 'c.JobID')
+        ->leftJoin('interview_detail as i', 'c.CandID', '=', 'i.CandID')
+        ->select(
+            DB::raw('DATEPART(WEEK, c.CreatedOn) AS week_number'),
+            DB::raw('COUNT(c.CandID) AS total_candidates'),
+            DB::raw('SUM(CASE WHEN i.hire_sts = 1 THEN 1 ELSE 0 END) AS hired_candidates')
+        )
+        ->whereBetween('c.CreatedOn', [now()->subWeeks(5), now()]) // Filter for the last five weeks
+        ->groupBy(DB::raw('DATEPART(WEEK, c.CreatedOn)'))
+        ->orderBy('week_number')
+        ->get();
+    return $weeklyHiringData;
+    }
+
 }
