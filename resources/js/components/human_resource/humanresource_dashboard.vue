@@ -15,15 +15,21 @@
                     </div>
                 </div>
                 <div class="content-body">
+<div class="row-birthday">
+
+</div>
+
+
+
                 <div class="row-attendance">
                     <div class="head-text">
                     Today's Employee Attendance
                     </div>
-                    <div class="emp-attendance">
+                    <div class="emp-attendance my-4">
                         <div class="col-md-2">
                             <div class="total-emp">
                                <div class="total-no">
-                                386
+                                386{{ att_daily_count.total }}
                                </div>
                                <div class="total-text">
                                 Total Employees
@@ -33,7 +39,7 @@
                        <div class="col-md-2">
                         <div class="present-emp">
                             <div class="present-no">
-                                357
+                                357{{ att_daily_count.present }}
                             </div>
                             <div class="present-text">
                                 Present
@@ -43,7 +49,7 @@
                        <div class="col-md-2">
                         <div class="late-emp">
                             <div class="late-no">
-                                96
+                                96{{ att_daily_count.late }}
                             </div>
                             <div class="late-text">
                                 Late
@@ -53,7 +59,7 @@
                        <div class="col-md-2">
                         <div class="absent-emp">
                             <div class="absent-no">
-                                29
+                                29{{ att_daily_count.absent }}
                             </div>
                             <div class="absent-text">
                                 Absent
@@ -73,105 +79,323 @@
                     </div>
                 </div>
 
-
-
-
-                    <div class="row match-height">
-                        <!-- Medal Card -->
-                        <div class="col-xl-4 col-md-6 col-12 col-xs-12">
-                            <div class="card card-congratulation-medal">
-                                <div class="card-body">
-                                    <h5>Welcome Back 🎉</h5>
-                                    <p class="card-text font-small-3">View your overall report </p>
-                                    <h3 class="mb-75 mt-2 pt-50">
-                                    </h3>
-                                    <router-link to="/hr/employee_dashboard"
-                                                 class="btn btn-primary waves-effect waves-float waves-light">View
-                                        Profile
-                                    </router-link>
-                                    <img src="public/app-assets/images/illustration/badge.svg"
-                                         class="congratulation-medal" alt="Medal Pic">
-                                </div>
-                            </div>
-                        </div>
-                        <!--/ Medal Card -->
-                        <!-- Statistics Card -->
-                        <div class="col-xl-8 col-md-6 col-12">
-                            <div class="card card-statistics">
-                                <div class="card-header">
-                                    <h4 class="card-title">Today's Employee Attendance</h4>
-
-                                </div>
-                                <div class="card-body statistics-body">
-                                    <div class="row">
-                                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-                                            <div class="d-flex flex-row">
-                                                <div class="avatar bg-light-info me-2">
-                                                    <div class="avatar-content">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                             stroke-width="2" stroke-linecap="round"
-                                                             stroke-linejoin="round"
-                                                             class="feather feather-user avatar-icon">
-                                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                                            <circle cx="12" cy="7" r="4"></circle>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div class="my-auto">
-                                                    <h4 class="fw-bolder mb-0">{{ att_daily_count.total }}</h4>
-                                                    <p class="card-text font-small-3 mb-0">Total Employees</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-                                            <div class="d-flex flex-row">
-                                                <div class="avatar bg-light-primary me-2">
-                                                    <div class="avatar-content">
-                                                        <i class="fa-solid fa-check"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="my-auto">
-                                                    <h4 class="fw-bolder mb-0">{{ att_daily_count.present }}</h4>
-                                                    <p class="card-text font-small-3 mb-0">Present</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
-                                            <div class="d-flex flex-row">
-                                                <div class="avatar bg-light-danger me-2">
-                                                    <div class="avatar-content">
-                                                        <i class="fa-solid fa-xmark"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="my-auto">
-                                                    <h4 class="fw-bolder mb-0">{{ att_daily_count.absent }}</h4>
-                                                    <p class="card-text font-small-3 mb-0">Absent</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-sm-6 col-12">
-                                            <div class="d-flex flex-row">
-                                                <div class="avatar bg-light-success me-2">
-                                                    <div class="avatar-content">
-                                                        <i class="fa-solid fa-litecoin-sign"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="my-auto">
-                                                    <h4 class="fw-bolder mb-0">{{ att_daily_count.late }}</h4>
-                                                    <p class="card-text font-small-3 mb-0">Late</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/ Statistics Card -->
+                <div class="row">
+<div class="col-md-5 employee-composition">
+    <div class="head-text my-4">
+        Employee Composition
                     </div>
-                    <div class="row match-height">
-                        <!-- Medal Card -->
+                    <div class="donut-chart">
+                            <!-- <apexchart width="500" type="bar" :options="chartOptionsbar" :series="chartSeriesbar"></apexchart> -->
+
+                            <apexchart class="my-4" width="350" height="290" type="donut" :options="chartOptionsdonut" :series="chartSeriesdonut"></apexchart>
+                     
+                   
+                           
+                       
+                        </div>
+
+
+</div>
+
+
+<div class="col-md-7 employee-detail">
+    
+<div class="d-flex justify-content-between">
+<div class="detail-count">
+    <div class="head-text my-4">
+        Employee Details
+                    </div>
+                    <div class="details-count">
+                        <div class=" d-flex justify-content-between mb-1">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fa-regular fa-circle text-success "></i>
+                                                    <span class="fw-bold ms-75">Total Employees</span>
+                                                </div>
+                                                <span>{{ (Math.floor(this.count_users.all_users)).toLocaleString() }}</span>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fa-regular fa-circle text-primary"></i>
+                                                    <span class="fw-bold ms-75">Registered</span>
+                                                </div>
+                                                <span>{{ (Math.floor(this.count_users.active_users)).toLocaleString() }}</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fa-regular fa-circle text-danger"></i>
+                                                    <span class="fw-bold ms-75">Contractual</span>
+                                                </div>
+                                                <span>{{ (Math.floor(this.count_users.contractual_users)).toLocaleString() }}</span>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fa-regular fa-circle text-warning"></i>
+                                                    <span class="fw-bold ms-75">Terminated</span>
+                                                </div>
+                                                <span>{{ this.count_users.terminated_users }}</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fa-regular fa-circle text-warning"></i>
+                                                    <span class="fw-bold ms-75">Resigned</span>
+                                                </div>
+                                                <span>{{ this.count_users.inactive_users }}</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fa-regular fa-circle text-warning"></i>
+                                                    <span class="fw-bold ms-75">Suspended</span>
+                                                </div>
+                                                <span>{{ this.count_users.suspended_users }}</span>
+                                            </div>
+                    </div>
+  
+
+</div>
+
+    <div class="ridial-bars" id="chart">
+                                                <apexchart type="radialBar" height="290" width='290' :options="chartOptions2"
+                                                           :series="series2"></apexchart>
+                                            </div>
+
+</div>
+
+
+
+</div>
+</div>
+<div class="row">
+    <div class="row-Departmentattendance">
+                    <div class="Departmentattendance-head">
+                        <h3 class="head-text mx-4">
+                            Department-wise Today's attendence 
+
+                        </h3>
+                        <h3 class="text-viewall ">
+                           viewall
+
+                        </h3>
+                    </div>
+                    <div class="Departmentattendence-Tabel">
+                        <table class="tabelclass">
+                        <thead class="my-3">
+                            <tr class="tabel-tr">
+
+                                <th class="tabel-th total-text col-md-2">Departments</th>
+                                <th class="tabel-th  total-text col-md-2">Employees</th>
+                                <th class="tabel-th present-text col-md-2">Present</th>
+                                <th class="tabel-th absent-text col-md-2">Absent </th>
+                                <th class="tabel-th late-text col-md-2">Late</th>
+                                <th class="tabel-th absent-text col-md-2">Leave</th>
+
+                            </tr>
+                        </thead>
+                        <tbody class="tabel-body">
+                            <tr class="body-tr">
+
+                                <td class="departmentsclass col-md-2 my-3">
+                                    Development
+                                   
+                                </td>
+                                <td class="departmentsclass col-md-2 my-3">
+                                    54
+                                </td>
+                                <td class="departmentsclass col-md-2 my-3">
+                                    65
+                                </td>
+                                <td class="departmentsclass col-md-2" >
+                                    67
+                                </td>
+                                <td class="departmentsclass col-md-2">
+                                    09
+                                </td>
+                                <td class="departmentsclass col-md-2">
+                                    09
+                                </td>
+
+                            </tr>
+                            <tr class="body-tr">
+
+<td class="departmentsclass col-md-2 my-3">
+    Development
+   
+</td>
+<td class="departmentsclass col-md-2 my-3">
+    54
+</td>
+<td class="departmentsclass col-md-2 my-3">
+    65
+</td>
+<td class="departmentsclass col-md-2" >
+    67
+</td>
+<td class="departmentsclass col-md-2">
+    09
+</td>
+<td class="departmentsclass col-md-2">
+    09
+</td>
+
+</tr>
+                        </tbody>
+                    </table>
+                    </div>
+                   
+                     
+                </div>
+</div>
+              
+<div class="row">
+  <div class="monthy-employee-chart">
+            
+                <div class="card-header">
+                                    <h4 class=" head-text">Month-wise Employees Report</h4>
+                                </div>
+                                <div class="card-body ">
+                                    <apexchart type="bar" height="300" :options="options" :series="series"></apexchart>
+                                </div>
+               </div>
+                               
+                           
+               
+</div>
+              
+                <div class="row">
+                    <div class="row-Departmentattendance">
+                    <div class="Departmentattendance-head">
+                        <h3 class="head-text mx-4">
+                            Department-wise Employee Status 
+
+                        </h3>
+                        <h3 class="text-viewall ">
+                           viewall
+
+                        </h3>
+                    </div>
+                    <div class="Departmentattendence-Tabel">
+                        <table class="tabelclass">
+                        <thead class="my-3">
+                            <tr class="tabel-tr ">
+
+                                <th class="tabel-th total-text col-md-1">Departments</th>
+                                <th class="tabel-th  total-text col-md-1">Employees</th>
+                                <th class="tabel-th present-text col-md-1">Registered</th>
+                                <th class="tabel-th contracts-text col-md-1">Contracts </th>
+                                <th class="tabel-th late-text col-md-1">Probation</th>
+                                <th class="tabel-th absent-text col-md-1">Resigned</th>
+                                <th class="tabel-th absent-text col-md-1">Terminated</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody class="tabel-body">
+                            <tr v-for="dept_data in Department_data" class="body-tr">
+
+                                <td class="departmentsclass col-md-1 my-3">
+                                    {{ dept_data.Department }}
+                                   
+                                </td>
+                                <td class="departmentsclass col-md-1 my-3">
+                                    {{ dept_data.TotalEmp }}
+                                </td>
+                                <td class="departmentsclass col-md-1 my-3">
+                                    {{ dept_data.RegisteredCount }}
+                                </td>
+                                <td class="departmentsclass col-md-1" >
+                                    {{ dept_data.TerminatedCount }}
+                                </td>
+                                <td class="departmentsclass col-md-1">
+                                    {{ dept_data.TerminatedCount }}
+                                </td>
+                                <td class="departmentsclass col-md-1">
+                                    {{ dept_data.ResignedCount }}
+                                </td>
+                                <td class="departmentsclass col-md-1">
+                                    {{ dept_data.TerminatedCount }}
+                                </td>
+                            </tr>
+             
+                        </tbody>
+                    </table>
+                    </div>
+                   
+                     
+                </div>
+                </div>
+               
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="employejob-status">
+                    <div class="Departmentattendance-head">
+                        <h3 class="head-text mx-4">
+                            Employee Job status/Expiry details
+
+                        </h3>
+                        <h3 class="text-viewall ">
+                           view all
+
+                        </h3>
+                    </div>
+                    <div class="Departmentattendence-Tabel">
+                        <table class="tabelclass">
+                        <thead class="my-3">
+                            <tr class="tabel-tr ">
+
+                                <th class="tabel-th total-text col-md-1">Employee Name</th>
+                                <th class="tabel-th  total-text col-md-1">Department</th>
+                                <th class="tabel-th total-text col-md-1">Position</th>
+                                <th class="tabel-th total-text col-md-1">Status Expiry Date </th>
+                             
+                            </tr>
+                        </thead>
+                        <tbody class="tabel-body">
+                            <tr class="body-tr">
+
+<td class="departmentsclass col-md-2 my-3">
+    Nauman
+   
+</td>
+<td class="departmentsclass col-md-2 my-3">
+    Bussiness
+</td>
+<td class="departmentsclass col-md-2 my-3">
+    Intership
+</td>
+<td class="departmentsclass col-md-2" >
+    11/12/23
+</td>
+
+</tr>
+             
+                        </tbody>
+                    </table>
+                    </div>
+                   
+                     
+                </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                            <div class="annual-leave">
+                                <div class="card-header ">
+                                    <h4 class="head-text">Yearly Leaves Data</h4>
+                                <hr>
+                                </div>
+                            <div class="anual-leave-chart">
+                                <apexchart type="bar" height="400" :options="chartOptions5"
+                                           :series="series5"></apexchart>
+                            </div>
+                            </div>
+                           
+                        </div>
+                </div>
+               
+               
+               
+                 
+                    <!-- <div class="row match-height">
+                    
                         <div class="col-xl-4 col-md-6 col-12">
                             <div class="card card-developer-meetup">
                                 <div class="meetup-img-wrapper rounded-top text-center">
@@ -208,72 +432,9 @@
                                 </div>
                             </div>
                         </div>
-                        <!--/ Medal Card -->
-                        <!-- Statistics Card -->
-                        <div class="col-xl-8 col-md-6 col-12">
-                            <div class="card card-statistics">
-                                <div class="card-header">
-                                    <h4 class="card-title">Month-wise Employees Report</h4>
-                                </div>
-                                <div class="card-body statistics-body">
-                                    <apexchart type="bar" :options="options" :series="series"></apexchart>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-7 col-md-6 col-12">
-                            <div class="card-header"><h4 style="font-size:14px">Department-wise Employees status
-                                ({{ emp_count.cnic_exp_cnt }})</h4></div>
-                            <div class="card card-company-table">
-                                <div class="card-body p-0">
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead class="text-center">
-                                            <tr>
-                                                <th style="width: 20%;">Department Name</th>
-                                                <th style="width: 20%;">Total Employees</th>
-                                                <th style="width: 20%;">Registered</th>
-                                                <th style="width: 20%;">Resigned</th>
-                                                <th style="width: 20%;">Terminated</th>
-                                            </tr>
-                                            </thead>
-                                        </table>
-                                        <div class="card-body" style="height: 402px; overflow-y: scroll;">
-                                            <table class="table">
-                                                <tbody>
-                                                <tr v-for="dept_data in Department_data">
-                                                    <td class="sorting_1" style="width: 20%;">
-                                                        {{ dept_data.Department }}
-                                                    </td>
-                                                    <td class="text-center" style="width: 18%;">
-                                                        {{ dept_data.TotalEmp }}
-                                                    </td>
-                                                    <td class="text-center" style="width: 18%;">
-                                                        {{ dept_data.RegisteredCount }}
-                                                    </td>
-                                                    <td class="text-center" style="width: 18%;">
-                                                        {{ dept_data.ResignedCount }}
-                                                    </td>
-                                                    <td class="text-center" style="width: 18%;">
-                                                        {{ dept_data.TerminatedCount }}
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 col-md-6 col-12">
-                            <div class="card-header"><h4 style="font-size:14px">Annual Leaves Data</h4></div>
-                            <div class="card">
-                                <apexchart type="bar" height="400" :options="chartOptions5"
-                                           :series="series5"></apexchart>
-                            </div>
-                        </div>
+                       
 
-                        <!--/ Statistics Card -->
-                    </div>
+                    </div> -->
                     <div class="row match-height">
                         <!-- Company Table Card -->
                         <div class="col-lg-8 col-12">
@@ -857,64 +1018,7 @@
                                 <!--/ Line Chart - Profit -->
                                 <!-- Earnings Card -->
 
-                                <div class="col-xl-12 col-md-6 col-12">
-
-                                    <div class="card card-developer-meetup">
-                                        <div class="card-body" style="">
-                                            <div class="card-header d-flex justify-content-between">
-                                                <h4 class="card-title">Employee Detail</h4>
-                                            </div>
-                                            <div id="chart">
-                                                <apexchart type="radialBar" height="220" :options="chartOptions2"
-                                                           :series="series2"></apexchart>
-                                            </div>
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <div class="d-flex align-items-center">
-                                                    <i class="fa-regular fa-circle text-success "></i>
-                                                    <span class="fw-bold ms-75">Total Employees</span>
-                                                </div>
-                                                <span>{{ (Math.floor(this.count_users.all_users)).toLocaleString() }}</span>
-                                            </div>
-
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <div class="d-flex align-items-center">
-                                                    <i class="fa-regular fa-circle text-primary"></i>
-                                                    <span class="fw-bold ms-75">Registered</span>
-                                                </div>
-                                                <span>{{ (Math.floor(this.count_users.active_users)).toLocaleString() }}</span>
-                                            </div>
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <div class="d-flex align-items-center">
-                                                    <i class="fa-regular fa-circle text-danger"></i>
-                                                    <span class="fw-bold ms-75">Contractual</span>
-                                                </div>
-                                                <span>{{ (Math.floor(this.count_users.contractual_users)).toLocaleString() }}</span>
-                                            </div>
-
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <div class="d-flex align-items-center">
-                                                    <i class="fa-regular fa-circle text-warning"></i>
-                                                    <span class="fw-bold ms-75">Terminated</span>
-                                                </div>
-                                                <span>{{ this.count_users.terminated_users }}</span>
-                                            </div>
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <div class="d-flex align-items-center">
-                                                    <i class="fa-regular fa-circle text-warning"></i>
-                                                    <span class="fw-bold ms-75">Resigned</span>
-                                                </div>
-                                                <span>{{ this.count_users.inactive_users }}</span>
-                                            </div>
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <div class="d-flex align-items-center">
-                                                    <i class="fa-regular fa-circle text-warning"></i>
-                                                    <span class="fw-bold ms-75">Suspended</span>
-                                                </div>
-                                                <span>{{ this.count_users.suspended_users }}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            
                                 <!--/ Earnings Card -->
                             </div>
                         </div>
@@ -1117,7 +1221,7 @@ export default {
     data: function () {
         return {
             Department_data: {},
-            series2: [100, 0, 0, 0, 0, 0],
+            series2: [190, 50, 10, 15, 7],
             count_users: {},
             att_daily_count: {},
             attendance: {},
@@ -1126,7 +1230,16 @@ export default {
             exp_cnic: {},
 
             events: {},
-
+            chartSeriesdonut: [35, 24],
+            chartOptionsdonut: {
+                chart: {
+                    type: 'donut',
+                },
+                responsive: [{
+              breakpoint: 300,
+            }],
+            labels: ['Male', 'Female'],
+            },
             chartOptions2: {
                 chart: {
                     height: 350,
@@ -1146,14 +1259,14 @@ export default {
                                 label: 'Total',
                                 formatter: function (w) {
 
-                                    return
+                                    return 200
                                 }
                             }
                         }
                     }
                 },
-                colors: ['#026440', '#0084ff', '#FF00FF', '#FFA500', '#808080', '#FF0000'],
-                labels: ['Total Employee', 'Registered', 'Contractual', 'Terminated', 'Resigned', 'Suspended'],
+                colors: [ '#0084ff', '#FF00FF', '#FFA500', '#808080', '#FF0000'],
+                labels: [ 'Registered', 'Contractual', 'Terminated', 'Resigned', 'Suspended'],
             },
             series5: [{
                 name: '',
@@ -1234,7 +1347,10 @@ export default {
                 },
                 xaxis: {
                     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                }
+                },
+                yaxis: {
+        max: 5,
+    },
             },
             series: [{
                 name: 'Hiring',
@@ -1294,7 +1410,7 @@ export default {
             .then(response => {
                 this.count_users = response.data
                 //Registered                                                //Contractual                                                                                                                                                                                  //Terminated
-                this.series2 = [100, ((this.count_users.active_users / this.count_users.all_users) * 100).toFixed(2), ((this.count_users.contractual_users / this.count_users.all_users) * 100).toFixed(2), ((this.count_users.terminated_users / this.count_users.all_users) * 100).toFixed(2), ((this.count_users.inactive_users / this.count_users.all_users) * 100).toFixed(2), ((this.count_users.suspended_users / this.count_users.all_users) * 100).toFixed(2)]
+                // this.series2 = [100, ((this.count_users.active_users / this.count_users.all_users) * 100).toFixed(2), ((this.count_users.contractual_users / this.count_users.all_users) * 100).toFixed(2), ((this.count_users.terminated_users / this.count_users.all_users) * 100).toFixed(2), ((this.count_users.inactive_users / this.count_users.all_users) * 100).toFixed(2), ((this.count_users.suspended_users / this.count_users.all_users) * 100).toFixed(2)]
 
             })
             .catch(error => {
@@ -1363,7 +1479,16 @@ export default {
 }
 </script>
 <style>
+.row-birthday{
+    width: 100%;
+height: 80px;
+flex-shrink: 0;
+border-radius: 16px;
+background: #BAD8FB;
+margin-bottom: 10px;
+}
 .row-attendance{
+    margin-bottom: 20px;
     max-width: 100%;
     max-height: 200px;
     flex-shrink: 0;
@@ -1374,7 +1499,7 @@ export default {
 }
 .head-text{
     color: #000;
-    font-family: Poppins;
+    font-family: 'Poppins',sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -1400,7 +1525,7 @@ export default {
 .total-no{
     color: #000;
     text-align: center;
-    font-family: Poppins;
+    font-family: 'Poppins',sans-serif;
     font-size: 28px;
     font-style: normal;
     font-weight: 600;
@@ -1410,8 +1535,9 @@ export default {
 }
 .total-text{
     color: #000;
-    font-family: Poppins;
-    font-size: 16px;
+    text-align: center;
+    font-family: 'Poppins',sans-serif;
+    font-size: 19px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -1431,7 +1557,7 @@ export default {
 .present-no{
     color: #1FC048;
     text-align: center;
-    font-family: Poppins;
+    font-family: 'Poppins',sans-serif;
     font-size: 28px;
     font-style: normal;
     font-weight: 600;
@@ -1442,8 +1568,8 @@ export default {
 .present-text{
     color: #1FC048;
     text-align: center;
-    font-family: Poppins;
-    font-size: 16px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 19px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -1462,7 +1588,7 @@ export default {
 .late-no{
     color: #0070F2;
     text-align: center;
-    font-family: Poppins;
+    font-family: 'Poppins',sans-serif;
     font-size: 28px;
     font-style: normal;
     font-weight: 600;
@@ -1473,8 +1599,8 @@ export default {
 .late-text{
     color: #0070F2;
     text-align: center;
-    font-family: Poppins;
-    font-size: 16px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 19px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -1493,7 +1619,7 @@ export default {
 .absent-no{
     color: #DC0000;
     text-align: center;
-    font-family: Poppins;
+    font-family: 'Poppins',sans-serif;
     font-size: 28px;
     font-style: normal;
     font-weight: 600;
@@ -1504,8 +1630,8 @@ export default {
 .absent-text{
     color: #DC0000;
     text-align: center;
-    font-family: Poppins;
-    font-size: 16px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 19px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -1524,7 +1650,7 @@ export default {
 .leave-no{
     color: #FF6900;
     text-align: center;
-    font-family: Poppins;
+    font-family: 'Poppins',sans-serif;
     font-size: 28px;
     font-style: normal;
     font-weight: 600;
@@ -1536,12 +1662,139 @@ export default {
 .leave-text{
     color: #FF6900;
     text-align: center;
-    font-family: Poppins;
-    font-size: 16px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 19px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.16px;
 }
+.contracts-text{
+    color: #FE6900;
+text-align: center;
+font-family: 'Poppins',sans-serif;
 
+font-size: 19px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 0.16px;
+}
+.row-Departmentattendance{
+
+margin-top: 20px;
+margin-bottom: 20px;
+width: 100%;
+height: 293px;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.Departmentattendance-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+height: 60px;
+border-radius: 14px 14px 0px 0px;
+background: #FFF;
+box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+}
+.text-viewall{
+    color: #000;
+font-family: 'Poppins',sans-serif;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 0.12px;
+margin-right: 20px;
+}
+
+.tabelclass{
+    align-items: center;
+    margin-top:20px;
+    width: 100%;
+}
+
+.tabel-tr{
+    text-align: center;
+}
+.departmentsclass{
+    color: #000;
+    font-family: 'Poppins',sans-serif;
+
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 0.14px;
+}
+.tabel-body{
+    text-align: center;
+    margin-top: 20px;
+}
+.tabel-body .body-tr td {
+    
+        border-right: 1px solid #020202; /* Add a vertical border between td elements */
+        padding-right: 10px; /* Adjust padding for better spacing */
+        
+    }
+  
+    .tabel-body .body-tr td:last-child {
+        border-right: none;
+    }
+    .tabelclass .thead .tr{
+        margin-bottom: 20px;
+    }
+    .annual-leave{
+        width: 420px;
+height: 521px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    }
+    .employejob-status{
+        width: 870px;
+height: 521px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+margin-bottom: 20px;
+    }
+    .monthy-employee-chart{
+        width: 100%;
+height: 421px;
+flex-shrink: 0;
+border-radius: 16px;
+background: #FFF;
+box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+
+    }
+    .employee-composition{
+        width: 450px;
+height: 295px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+margin-right: 30px;
+    }
+    .employee-detail{
+        width: 850px;
+height: 295px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    }
+    .details-count{
+        margin-left: 80px;
+    }
+    .ridial-bars{
+        margin-right: 50px;
+    }
 </style>

@@ -178,7 +178,7 @@ export default {
                     }
 
                     // Reload the page after all functions are executed
-                    window.location.reload();
+                    // window.location.reload();
                     // this.$router.push('/hr/employee_dashboard');
 
                 } else {
@@ -186,7 +186,12 @@ export default {
                 }
             } catch (error) {
                 this.error = error.response.data.errors;
-            }
+            } finally {
+    // Add a 2-second timeout before reloading the window
+    setTimeout(() => {
+        window.location.reload();
+    }, 2000); // 2000 milliseconds = 2 seconds
+}
         },
         getPermissions() {
             axios.get('get_permissions', {

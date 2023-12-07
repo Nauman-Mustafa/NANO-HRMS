@@ -136,7 +136,7 @@
                     <div class="row my-5">
                         <div class="bar-charts card  ">
                             <div class="card-header" >
-                                    <h4 class=" activePost-text">Last 5 Months Hiring </h4>
+                                    <h4 class=" activePost-text">Last 5 Weeks Hiring </h4>
                                 </div>
             
                             <apexchart width="800" height="320" type="bar" :options="chartOptionsbar" :series="chartSeriesbar"></apexchart>
@@ -766,7 +766,7 @@ letter-spacing: 0.28px;
 }
 .cardsfooter{
     color: #949494;
-font-family: Poppins;
+font-family: 'Poppins',sans-serif;
 font-size: 14px;
 font-style: normal;
 font-weight: 400;
@@ -951,7 +951,7 @@ flex-shrink: 0;
 }
 .source-text{
     color: #000;
-font-family: Poppins;
+font-family: 'Poppins',sans-serif;
 font-size: 14px;
 font-style: normal;
 font-weight: 500;
