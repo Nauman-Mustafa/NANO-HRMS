@@ -114,9 +114,9 @@ class EmployeeRepository implements EmployeeRepositoryInterface
     {
         try {
             $allEmployees = DB::connection('sqlsrv2')->table('Emp_Register')->where('CompanyID', '=', company_id());
-            if (Session::get('hr_write') != 'true') {
-                $allEmployees->whereIn('Emp_Register.EmployeeID', array_column(reporting_team(), 'EmployeeID'));
-            }
+            // if (Session::get('hr_write') != 'true') {
+            //     $allEmployees->whereIn('Emp_Register.EmployeeID', array_column(reporting_team(), 'EmployeeID'));
+            // }
             $result = $allEmployees->selectRaw('COUNT(*) as all_users')
                 ->selectRaw('SUM(CASE WHEN Status = \'Registered\' THEN 1 ELSE 0 END) as active_users')
                 ->selectRaw('SUM(CASE WHEN Status = \'Resigned\' THEN 1 ELSE 0 END) as inactive_users')

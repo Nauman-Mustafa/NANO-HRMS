@@ -2913,12 +2913,13 @@ class HrController extends Controller
         $present = DB::connection('sqlsrv2')->table('AttData')->where('CompanyID', '=', company_id())->where('ATTDate', '=', $update_date)->where('AttStatus', '=', 'P')->count();
         $absent = DB::connection('sqlsrv2')->table('AttData')->where('CompanyID', '=', company_id())->where('ATTDate', '=', $update_date)->where('AttStatus', '=', 'A')->count();
         $late = DB::connection('sqlsrv2')->table('AttData')->where('CompanyID', '=', company_id())->where('ATTDate', '=', $update_date)->where('AttStatus', '=', 'L')->count();
-
+        $leave = DB::connection('sqlsrv2')->table('AttData')->where('CompanyID', '=', company_id())->where('ATTDate', '=', $update_date)->where('AttStatus', '=', 'Le')->count();
         $myJSON = array(
             'total' => $total,
             'present' => $present,
             'absent' => $absent,
             'late' => $late,
+            'leave'=> $leave
         );
         return request()->json(200, $myJSON);
     }
@@ -6156,10 +6157,12 @@ $arr='Arrears updated';
         $p = 'P';
         $a = 'A';
         $l = 'L';
+        $le = 'Le';
         $result = DB::connection('sqlsrv2')->select("select Department, count (Department) as TotalEmployee ,
                 sum(case when AttStatus = '" . $p . "' then 1 else 0 end) AS Present,
                 sum(case when AttStatus = '" . $a . "' then 1 else 0 end) AS Absent,
-              sum(case when AttStatus = '" . $l . "' then 1 else 0 end) AS Leave
+              sum(case when AttStatus = '" . $l . "' then 1 else 0 end) AS Late,
+              sum(case when AttStatus = '" . $le . "' then 1 else 0 end) AS Leave
               from  Emp_Register er
               join Attdata ad  on  er.EmployeeCode = ad.EmpCode
               where ATTDate = '$today'
@@ -6168,7 +6171,55 @@ $arr='Arrears updated';
         return request()->json(200, $result);
     }
 
-
+    public function CompanyWise_EmpAge()
+    {
+        $employees = DB::connection('sqlsrv2')
+            ->select('SELECT
+                EmployeeID,
+                Name,
+                DOB,
+                DATEDIFF(YEAR, DOB, GETDATE()) AS Age
+                FROM Emp_Profile');
+    
+        // Initialize an array to store age group counts
+        $ageGroups = [
+            '0-20' => 0,
+            '21-30' => 0,
+            '31-40' => 0,
+            '41-50' => 0,
+            '51+' => 0,
+        ];
+    
+        // Count employees in each age group
+        foreach ($employees as $employee) {
+            $age = $employee->Age;
+    
+            // Determine the age group
+            if ($age >= 0 && $age <= 20) {
+                $ageGroups['0-20']++;
+            } elseif ($age > 20 && $age <= 30) {
+                $ageGroups['21-30']++;
+            } elseif ($age > 30 && $age <= 40) {
+                $ageGroups['31-40']++;
+            } elseif ($age > 40 && $age <= 50) {
+                $ageGroups['41-50']++;
+            } else {
+                $ageGroups['51+']++;
+            }
+        }
+    
+        // Convert the age group counts to a format suitable for the client
+        $formattedAgeGroups = [];
+        foreach ($ageGroups as $ageGroup => $count) {
+            $formattedAgeGroups[] = [
+                'AgeGroup' => $ageGroup,
+                'EmployeeCount' => $count,
+            ];
+        }
+    
+        return response()->json(['ageGroups' => $formattedAgeGroups]);
+    }
+    
     public function hrdb_employee_count(Request $request)
     {
 

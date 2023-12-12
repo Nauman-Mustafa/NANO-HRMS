@@ -367,7 +367,7 @@
                         </div>
 
 
-<div class="row  ">
+<div class="row">
     <div class="col-lg-4 col-md-3 activity-row">
                             <div class="card card-employee-task">
                                 <div class="card-header" >
