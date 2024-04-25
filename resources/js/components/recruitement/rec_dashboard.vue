@@ -133,13 +133,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row my-5">
+                    <div class="row ">
                         <div class="bar-charts card  ">
                             <div class="card-header" >
                                     <h4 class=" activePost-text">Last 5 Weeks Hiring </h4>
                                 </div>
-            
-                            <apexchart width="800" height="320" type="bar" :options="chartOptionsbar" :series="chartSeriesbar"></apexchart>
+            <div class="barchat">
+                <apexchart width="800" height="320" type="bar" :options="chartOptionsbar" :series="chartSeriesbar"></apexchart>
+
+            </div>
                         
                    
                            
@@ -896,7 +898,7 @@ text-align: center; /* If you want to center the text horizontally */
 }
 .card-employee-task{
     width: 400px;
-height: 402px;
+height: 590px;
 flex-shrink: 0;
 border-radius: 14px;
 background: #FFF;
@@ -913,7 +915,7 @@ letter-spacing: 0.14px;
 }
 .activity-row{
     position: relative;
-    top: -180px;
+    top: -221px;
 }
 .Activity-performed{
     max-width: 820px;
@@ -960,7 +962,7 @@ letter-spacing: 0.14px;
 }
 .donut-charts{
     max-width: 400px;
-    max-height: 370px;
+    max-height: 402px;
 flex-shrink: 0;
 border-radius: 14px;
 background: #FFF;
@@ -985,7 +987,7 @@ background-color: rgb(0, 143, 251)
 .bar-charts{
     margin-right: 50px;
     max-width: 822px;
-max-height: 370px;
+max-height: 402px;
 flex-shrink: 0;
 border-radius: 14px;
 background: #FFF;

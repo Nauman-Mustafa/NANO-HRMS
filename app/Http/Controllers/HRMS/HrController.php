@@ -2636,7 +2636,7 @@ class HrController extends Controller
 
     public function submit_holidays(Request $request)
     {
-        $isRepeat = $request->isRepeat;
+        
         $holiday_name = $request->h_holiday_name;
         $h_date_from = $request->h_date_from;
         $h_date_to = $request->h_date_to;
@@ -2661,7 +2661,7 @@ class HrController extends Controller
             'NoOfDays' => $days,
             'CreatedBy' => username(),
             'CreatedOn' => long_date(),
-            'isRepeat' => $isRepeat,
+            'IsDeleted'=>0
         ]);
 
         if ($result) {
@@ -2674,13 +2674,14 @@ class HrController extends Controller
     {
 
         $arr = DB::connection('sqlsrv2')->table("Holiday")->where('IsDeleted', '=', 0)->where('CompanyID', '=', company_id())->orderBy('HolidayID', 'desc')->paginate(5);
+       
         return request()->json(200, $arr);
     }
 
     public function submit_l(Request $request)
     {
         $leave_type = $request->get('l_type');
-        $isLimited = $request->get('isLimited');
+        // $isLimited = $request->get('isLimited');
 
         $isExist = DB::connection('sqlsrv2')->table("leaves")->where('LeaveType', '=', $leave_type)->where('CompanyID', '=', company_id())->exists();
         if ($isExist) {
@@ -2691,7 +2692,7 @@ class HrController extends Controller
             ->insert([
                 'CompanyID' => company_id(),
                 'LeaveType' => $leave_type,
-                'IsLimited' => $isLimited,
+              
                 'CreatedBy' => username(),
                 'CreatedOn' => long_date(),
             ]);

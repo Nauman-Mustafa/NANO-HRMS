@@ -200,7 +200,7 @@ Route::middleware(['permission:HRMS employees_detail update employee_experience'
 });
 Route::middleware(['permission:HRMS employees_detail overall-view,Human Resource Dashboard overall-view'])->group(function () {
     Route::get('/count_employees', 'App\Http\Controllers\HRMS\EmployeDetails\EmployeDetailsController@count_employees');
-    Route::get('searchemployee/{dep}/{loc}/{des}/{gen}/{sts}/{min}/{max}/{cnic}/{id}/{ests}', 'App\Http\Controllers\HRMS\HrController@searchemployee');
+    Route::get('searchemployee/{dep}/{loc}/{des}/{gen}/{sts}/{min}/{max}/{cnic}/{id}/{ests}', 'App\Http\Controllers\HRMS\EmployeDetails\EmployeDetailsController@searchemployee');
     Route::get('search_Employee_bynamecnic', 'App\Http\Controllers\HRMS\EmployeDetails\EmployeDetailsController@search_Employee_bynamecnic');
 });
 //this permmission is also used in different routes

@@ -91,10 +91,8 @@
 
                             <apexchart class="" width="350" height="310" type="donut" :options="chartOptionsdonut" :series="chartSeriesdonut"></apexchart>
                      
-                   
-                           
-                       
                         </div>
+                            
 <div class="malefemale">
     <div>
     <span class="countgraph">{{ this.emp_count.males ?  this.emp_count.males : 0 }}</span>
@@ -182,6 +180,7 @@
 
 </div>
 </div>
+
 <div class="row">
     <div class="row-Departmentattendance">
                     <div class="Departmentattendance-head">

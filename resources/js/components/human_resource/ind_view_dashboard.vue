@@ -20,11 +20,14 @@
                         <section class="app-user-list">
                             <div class="row match-height">
                                 <!-- Statistics Card -->
-                                <div class="col-xl-12 col-md-12 col-12">
-                                    <div data-v-step="4" class="card card-statistics">
-                                        <div class="card-header ">
-                                            <h4 class="card-title">Custom Date Range Attendance Statistics</h4>
-                                            <date-range-picker
+                                <div class='col-sm-12 col-md-10 col-xl-10 '>
+<div data-v-step="4" class="date-range-card">
+    <div class='daterange-row my-3 mx-4 d-flex justify-content-between'>
+       
+        <h3>
+            Custom Date Range Attendance Statistics
+        </h3> 
+        <date-range-picker
                                                 ref="picker"
                                                 minDate="'2022-07-03'"
                                                 :maxDate="att_date"
@@ -32,95 +35,199 @@
                                                 :locale-data="{ firstDay: 1, format: 'dd-mm-yyyy' }"
                                                 @update="get_attendance_count()">
                                             </date-range-picker>
-                                        </div>
-                                        <div class="card-body statistics-body"
-                                             style="padding-top: 5px !important; padding-bottom: 10px !important;">
-                                            <div class="row">
-                                                <div class="col-xl-2 col-sm-6 col-12">
-                                                    <div class="d-flex flex-row">
-                                                        <div class="avatar bg-light-dark me-2">
-                                                            <div class="avatar-content">
-                                                                <i class="fa-solid fa-calendar-days"></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <h4 class="fw-bolder mb-0">{{ ct_att.totalDays }}</h4>
-                                                            <p class="card-text font-small-3 mb-0">Total Days</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-2 col-sm-6 col-12">
-                                                    <div class="d-flex flex-row">
-                                                        <div class="avatar bg-light-success me-2">
-                                                            <div class="avatar-content">
-                                                                <i class="fa-solid fa-person"></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <h4 class="fw-bolder mb-0">{{ ct_att.present }}</h4>
-                                                            <p class="card-text font-small-3 mb-0">Present</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-2 col-sm-6 col-12">
-                                                    <div class="d-flex flex-row">
-                                                        <div class="avatar bg-light-info me-2">
-                                                            <div class="avatar-content">
-                                                                <i class="fa-solid fa-person"></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <h4 class="fw-bolder mb-0">{{ ct_att.holiday }}</h4>
-                                                            <p class="card-text font-small-3 mb-0">Holiday</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-2 col-sm-6 col-12">
-                                                    <div class="d-flex flex-row">
-                                                        <div class="avatar bg-light-warning me-2">
-                                                            <div class="avatar-content">
-                                                                <i class="fa-solid fa-clock"></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <h4 class="fw-bolder mb-0">{{ ct_att.late }}</h4>
-                                                            <p class="card-text font-small-3 mb-0">Late</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-2 col-sm-6 col-12">
-                                                    <div class="d-flex flex-row">
-                                                        <div class="avatar bg-light-primary me-2">
-                                                            <div class="avatar-content">
-                                                                <i class="fa-solid fa-person-skiing-nordic"></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <h4 class="fw-bolder mb-0">{{ ct_att.leave }}</h4>
-                                                            <p class="card-text font-small-3 mb-0">Leave</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-2 col-sm-6 col-12">
-                                                    <div class="d-flex flex-row">
-                                                        <div class="avatar bg-light-danger me-2">
-                                                            <div class="avatar-content">
-                                                                <i class="fa-solid fa-flag"></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="my-auto">
-                                                            <h4 class="fw-bolder mb-0">{{ ct_att.absent }}</h4>
-                                                            <p class="card-text font-small-3 mb-0">Absent</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+    </div>
+<div class='attendence-count-row d-flex justify-content-evenly mt-4'>
+<div class='attendece-count-card col-md-2'> 
+    <h3 class='attendence-count-heading'> Total Days</h3> 
+    <h3 class='attendence-count-number'> 30{{ ct_att.totalDays }}</h3> 
+    
+</div>
+<div class='attendece-count-card col-md-2'> 
+    <h3 class='attendence-count-heading'> Present</h3> 
+    <h3 class='attendence-count-number'> 16{{ ct_att.present }}</h3> 
+    
+</div>
+<div class='attendece-count-card col-md-2'> 
+    <h3 class='attendence-count-heading'> Holiday</h3> 
+    <h3 class='attendence-count-number'> 06{{ ct_att.holiday }}</h3> 
+    
+</div>
+<div class='attendece-count-card col-md-2'> 
+    <h3 class='attendence-count-heading'> Late</h3> 
+    <h3 class='attendence-count-number'> 05{{ ct_att.late }}</h3> 
+    
+</div>
+<div class='attendece-count-card col-md-2'> 
+    <h3 class='attendence-count-heading'> Leaves</h3> 
+    <h3 class='attendence-count-number'> 03{{ ct_att.leave }}</h3> 
+    
+</div>
+<div class='attendece-count-card col-md-2'> 
+    <h3 class='attendence-count-heading'> Absent</h3> 
+    <h3 class='attendence-count-number'> 04{{ ct_att.absent }}</h3> 
+    
+</div>
+</div>
+</div>
                                 </div>
-                                <!--/ Statistics Card -->
-                            </div>
+                                <div class='col-sm-12 col-md-2 col-xl-2 '>
+                                    <div class="date-range-card d-flex align-items-center justify-content-center">
+<div class='profile-view '>  
+    <img src="public/images/profile_images/pro.png" alt="avatar" height="80" width="80" class="round">
 
+    <router-link to="/hr/emp_detail" class="btn view-profile-link">
+                                                View Profile
+                                            </router-link>
+
+</div>
+                                </div>
+
+                                </div>
+                               
+                              
+                            </div>
+                            <div class='Leaves-data-row'>
+                                <div class='col-md-12'> 
+                                    <div class=" ">
+                                        <div class='daterange-row py-4 px-4 d-flex justify-content-between'>
+       
+       <h3>
+           Leaves Data
+       </h3> 
+       <button  class="btn applyleavedata">Apply</button>
+
+   </div>
+
+   <div class='leaves-chart-row d-flex justify-content-evenly mt-3'> 
+    <div class='Leaves-chats-box col-md-3'> 
+<div class='leavechart-heading py-3  px-2 d-flex justify-content-between'> 
+    <h5> Annual Leaves</h5>
+    <a @click="leaves_details('Annual')" data-v-step="9"
+                                                   data-bs-toggle="modal" data-bs-target="#emp_leaves"
+                                                   class="role-edit-modal" style="text-decoration:none;color:#0d6efd">
+                                                    <small class="fw-bolder">View Detail</small></a>
+</div>
+<div class='row'> 
+<div class='col-md-6'>
+    <apexchart
+  width="150"
+  height="150"
+  type="radialBar"
+  :options="chartOptionsradialBar"
+  :series="AnnualLeaves"
+></apexchart>
+</div>
+<div class='col-md-6 leaves-counts d-flex flex-column align-iten-center justify-content-center'>
+    <small class=''>
+        Total Leaves:
+       </small> 
+       <small>
+        Available Leaves:
+       </small> 
+       <small class='py-2'>
+        Used Leaves:
+       </small> 
+</div>
+</div>
+
+    </div>
+    <div class='Leaves-chats-box col-md-3'> 
+        <div class='leavechart-heading py-3  px-2 d-flex justify-content-between'> 
+    <h5> Sick Leaves</h5>
+    <a @click="leaves_details('Annual')" data-v-step="9"
+                                                   data-bs-toggle="modal" data-bs-target="#emp_leaves"
+                                                   class="role-edit-modal" style="text-decoration:none;color:#0d6efd">
+                                                    <small class="fw-bolder">View Detail</small></a>
+</div>
+<div class='row'> 
+<div class='col-md-6'>
+    <apexchart
+  width="150"
+  height="150"
+  type="radialBar"
+  :options="chartOptionsradialBar"
+  :series="SickLeaves"
+></apexchart>
+</div>
+<div class='col-md-6 leaves-counts d-flex flex-column align-iten-center justify-content-center'>
+    <small class=''>
+        Total Leaves:
+       </small> 
+       <small>
+        Available Leaves:
+       </small> 
+       <small class='py-2'>
+        Used Leaves:
+       </small> 
+</div>
+</div>
+</div>
+<div class='Leaves-chats-box col-md-3'> 
+    <div class='leavechart-heading py-3  px-2 d-flex justify-content-between'> 
+    <h5> Casual Leaves</h5>
+    <a @click="leaves_details('Annual')" data-v-step="9"
+                                                   data-bs-toggle="modal" data-bs-target="#emp_leaves"
+                                                   class="role-edit-modal" style="text-decoration:none;color:#0d6efd">
+                                                    <small class="fw-bolder">View Detail</small></a>
+</div>
+<div class='row'> 
+<div class='col-md-6'>
+    <apexchart
+  width="150"
+  height="150"
+  type="radialBar"
+  :options="chartOptionsradialBar"
+  :series="CasualLeaves"
+></apexchart>
+</div>
+<div class='col-md-6 leaves-counts d-flex flex-column align-iten-center justify-content-center'>
+    <small class=''>
+        Total Leaves:
+       </small> 
+       <small>
+        Available Leaves:
+       </small> 
+       <small class='py-2'>
+        Used Leaves:
+       </small> 
+</div>
+</div>
+</div>
+<div class='Leaves-chats-box col-md-3'> 
+    <div class='leavechart-heading py-3  px-2 d-flex justify-content-between'> 
+    <h5> Other Leaves</h5>
+    <a @click="leaves_details('Annual')" data-v-step="9"
+                                                   data-bs-toggle="modal" data-bs-target="#emp_leaves"
+                                                   class="role-edit-modal" style="text-decoration:none;color:#0d6efd">
+                                                    <small class="fw-bolder">View Detail</small></a>
+</div>
+<div class='row'> 
+<div class='col-md-6'>
+    <apexchart
+  width="150"
+  height="150"
+  type="radialBar"
+  :options="chartOptionsradialBar"
+  :series="OtherLeaves"
+></apexchart>
+</div>
+<div class='col-md-6 leaves-counts d-flex flex-column align-iten-center justify-content-center'>
+    <small class=''>
+        Total Leaves:
+       </small> 
+       <small>
+        Available Leaves:
+       </small> 
+       <small class='py-2'>
+        Used Leaves:
+       </small> 
+</div>
+</div>
+</div>
+   </div>
+                                </div>
+                                 </div>
+                                </div>
                             <div class="row match-height">
 <!--                                <div class="col-lg-3 col-md-3 col-12">-->
 <!--                                    <div class="card" data-v-step="7">-->
@@ -1892,6 +1999,7 @@
 <script>
 import Multiselect from 'vue-multiselect';
 import moment from 'moment';
+import VueApexCharts from 'vue-apexcharts';
 import DateRangePicker from 'vue2-daterange-picker'
 //you need to import the CSS manually
 import 'vue2-daterange-picker/dist/vue2-daterange-picker.css'
@@ -1937,9 +2045,63 @@ Vue.filter('formatTime', function (value) {
     }
 });
 export default {
+ 
     name: 'my-tour',
     data: function () {
         return {
+            chartOptionsradialBar: {
+      plotOptions: {
+        radialBar: {
+          hollow: {
+            margin: 15,
+            size: "70%",
+            background: "transparent",
+          },
+          track: {
+            background: '#fff', // Change track background color to white
+            strokeWidth: '67%',
+            margin: 0, // Remove margin to make the track cover the entire area
+            dropShadow: {
+              enabled: true,
+              top: -3,
+              left: 0,
+              blur: 4,
+              opacity: 0.35
+            }
+          },
+          dataLabels: {
+            name: {
+              show: false,
+            },
+            value: {
+              show: false,
+            },
+          },
+        },
+      },
+      fill: {
+        type: "gradient",
+        gradient: {
+          shade: "dark",
+          type: "horizontal",
+          shadeIntensity: 0.5,
+          gradientToColors: ["#ABE5A1", "#FFD180", "#FF6161"],
+          inverseColors: true,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 50, 100],
+        },
+      },
+      stroke: {
+        lineCap: "round",
+      },
+      labels: ["Progress"],
+    },
+    AnnualLeaves: [], 
+    OtherLeaves:[],
+    CasualLeaves:[],
+    SickLeaves:[],
+
             FirstDayOfMonth: '',
             dateRange: {
                 endDate: new Date().toISOString().substr(0, 10),//null
@@ -2155,6 +2317,7 @@ export default {
     },
 
     components: {
+        apexchart: VueApexCharts,
         Multiselect,
         DateRangePicker,
         moment
@@ -2437,6 +2600,10 @@ export default {
             var d = new Date(dateS);
             return days[d.getDay()];
         },
+         calculatePercentage(total, remaining) {
+  if (total === 0) return 0; // Prevent division by zero
+  return ((total - remaining) / total) * 100;
+},
         delay3() {
             this.disabled3 = true
             this.timeout3 = setTimeout(() => {
@@ -2492,7 +2659,7 @@ export default {
             })
             .catch(error => {
             });
-
+            
         axios.get('selected_emp_leaves_blnc/' + 0)
             .then(data => {
                 this.leavesblnc = data.data.data;
@@ -2503,6 +2670,7 @@ export default {
                 }
             })
             .catch(error => {
+
             });
 
         axios.get('att_time/' + 0)
@@ -2514,13 +2682,29 @@ export default {
             .catch(error => {
             });
 
-        axios.get('this_user_attendence/' + 0) //Get attendance of logged in employee
+        axios.get('this_user_attendence/' + 0) 
             .then(response => this.attendance = response.data.data)
             .catch(error => {
             });
 
-        axios.get('leaves_dtl') //Count leaves detail
-            .then(data => this.leaves_dtl = data.data)
+        axios.get('leaves_dtl') 
+            .then(data => {
+                
+                console.log(data.data);
+                this.leaves_dtl = data.data
+                const annualLeavePercentage = calculatePercentage(this.leaves_dtl.ttl_annual, this.leaves_dtl.rem_annual);
+      const casualLeavePercentage = calculatePercentage(this.leaves_dtl.ttl_casual, this.leaves_dtl.rem_casual);
+      const sickLeavePercentage = calculatePercentage(this.leaves_dtl.ttl_sick, this.leaves_dtl.rem_sick);
+      const otherLeavePercentage = calculatePercentage(this.leaves_dtl.ttl_other, this.leaves_dtl.rem_other);
+
+  
+      this.AnnualLeaves = [annualLeavePercentage];
+      this.CasualLeaves = [casualLeavePercentage];
+      this.SickLeaves = [sickLeavePercentage];
+      this.OtherLeaves = [otherLeavePercentage];
+     
+            
+            })
             .catch(error => {
             });
 
@@ -2551,6 +2735,35 @@ export default {
 
 </script>
 <style>
+.date-range-card{
+    width: 100%;
+    height: 230px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.leavechart-heading h5{
+    color: #000;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.2px;
+   
+}
+.date-range-card .daterange-row  h3{
+    color: #000;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    margin-left: 20px;
+}
 #v-step-46f34eda {
     transform: none !important;
 }
@@ -2594,5 +2807,91 @@ export default {
 .td-right {
     text-align: right;
     vertical-align: middle !important;
+}
+
+.attendece-count-card{
+    width: 130px;
+height: 100px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #F9F9F9;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+/* text-align: center; */
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+}
+.attendence-count-heading{
+ 
+    text-align: center;
+    font-family: 'Poppins',sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    padding: 5px;
+}
+.attendence-count-number{
+    text-align: center;
+    font-family: 'Poppins',sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    padding: 5px;
+}
+.view-profile-link{
+    text-align: center;
+    font-family: 'Poppins',sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    padding: 5px;
+}
+.profile-view{
+    display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+}
+.applyleavedata{
+    border-radius: 6px;
+    background: #1e90ff;
+    color: white;
+    padding: 5px 40px;
+}
+.Leaves-chats-box{
+    width: 300px;
+height: 200px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #fff;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+/* text-align: center; */
+
+}
+.leaves-counts small{
+    
+    font-family: 'Poppins',sans-serif;
+ 
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.28px;
+    padding: 5px;
+}
+.Leaves-data-row{
+    height: 350px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #fff;
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+/* text-align: center; */
+
 }
 </style>
